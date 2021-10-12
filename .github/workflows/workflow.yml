@@ -20,10 +20,12 @@ jobs:
           node-version: '14'
 
       - name: Install and build
-        run: npm install -D vuepress@next && npm run docs:build
+        run: |
+          npm install -D vuepress@next
+          npm run docs:build
       
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: docs/.vuepress/dist # The folder the action should deploy.        
+          folder: .vuepress/dist # The folder the action should deploy.        
