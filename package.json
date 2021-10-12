@@ -1,0 +1,12 @@
+{
+  "name": "docs.buanet.de",
+  "homepage": "https://buanet.github.io",
+  "version": "0.0.1",
+  "description": "documentation and tutorials of my projects",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+    },
+    "author": "André Germann",
+    "license": "MIT"
+  }
