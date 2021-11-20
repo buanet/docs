@@ -52,6 +52,7 @@ module.exports = {
     logo: '/images/logo.png',
     logoDark: '/images/logo_dark.png',
     editLink: false,
+    contributors: false,
   },
   plugins: [
     [
