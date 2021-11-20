@@ -7,8 +7,23 @@ head:
     - name: robots
       content: "index, follow"
   - - meta
+    - property: og:title
+      content: "Official ioBroker Docker Image"
+  - - meta
+    - property: og:description
+      content: "Everything you need to know about the official ioBroker Docker image"
+  - - meta
+    - property: og:url
+      content: "https://docs.buanet.de/iobroker-docker-image/"
+  - - meta
     - property: og:image
-      content: "/images/logo_og.png"
+      content: "https://docs.buanet.de/images/opengraph/default.png"
+  - - meta
+    - property: og:type
+      content: "article"
+  - - meta
+    - property: og:locale
+      content: "en_US"
 permalink: /iobroker-docker-image
 ---
 
