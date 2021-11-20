@@ -6,11 +6,32 @@ title: Willkommen
 footer: Copyright © 2021 André Germann
 head:
   - - meta
+    - name: description
+      content: "Dokumentation und Tutorials zu meinen Projekten rund um das Thema Smarthome mit Docker."
+  - - meta
     - name: charset
       content: UTF‑8
   - - meta
     - name: robots
       content: "index, follow"
+  - - meta
+    - property: og:title
+      content: "docs.buanet.de"
+  - - meta
+    - property: og:description
+      content: "Dokumentation und Tutorials zu meinen Projekten rund um das Thema Smarthome mit Docker."
+  - - meta
+    - property: og:url
+      content: "https://docs.buanet.de"
+  - - meta
+    - property: og:image
+      content: "https://docs.buanet.de/images/opengraph/default.png"
+  - - meta
+    - property: og:type
+      content: "website"
+  - - meta
+    - property: og:locale
+      content: "de_DE"
 ---
 
 <span class="center">

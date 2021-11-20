@@ -1,6 +1,9 @@
 ---
 head:
   - - meta
+    - name: description
+      content: "Everything you need to know about the official ioBroker Docker image."
+  - - meta
     - name: charset
       content: UTF‑8
   - - meta
@@ -11,7 +14,7 @@ head:
       content: "Official ioBroker Docker Image"
   - - meta
     - property: og:description
-      content: "Everything you need to know about the official ioBroker Docker image"
+      content: "Everything you need to know about the official ioBroker Docker image."
   - - meta
     - property: og:url
       content: "https://docs.buanet.de/iobroker-docker-image/"

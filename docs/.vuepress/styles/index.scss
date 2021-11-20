@@ -26,13 +26,16 @@ i.fas, i.fab {
     background-image: url("https://docs.buanet.de/images/beach.jpg");
     background-size: cover;
     border-radius: 100px;
-    width: 600px;
-    height: 338px;
+    width: 100%;
+    max-width: 650px;
+    height: 366px;
     text-align: center;
     margin: 40px auto;
 }
 #beachlogo img {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
     padding-top: 50px;
 }
 
