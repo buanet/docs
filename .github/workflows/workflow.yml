@@ -21,7 +21,8 @@ jobs:
 
       - name: Install and build
         run: |
-          npm install -D vuepress@next
+          npm i -D vuepress@next
+          npm i -D @vuepress/plugin-search@next
           npm run docs:build
       
       - name: Deploy
