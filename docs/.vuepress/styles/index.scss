@@ -1,0 +1,51 @@
+
+// style profile pic in "about"
+#profile_pic {
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+}
+#profile_pic img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 1px solid var(--c-border);
+}
+
+// style fontawesome icons
+i.fas, i.fab {
+    margin: 10px;
+}
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+// style landing page logo
+#beachlogo {
+    background-image: url("https://docs.buanet.de/images/beach.jpg");
+    background-size: cover;
+    border-radius: 100px;
+    width: 600px;
+    height: 338px;
+    text-align: center;
+    margin: 40px auto;
+}
+#beachlogo img {
+    width: 250px;
+    padding-top: 50px;
+}
+
+// set max-with of content
+div.theme-default-content:not(.custom) {
+    max-width: 1000px;
+}
+
+// resize images by "alt"-tag
+img[alt='ioBroker Logo'] {
+    width: 700px;
+}
+
+a {
+    color: var(--c-brand);
+}
