@@ -11,7 +11,7 @@ head:
       rel: "stylesheet"
 ---
 
-# About
+# About me
 
 <div id="profile_pic">
 <img src="/images/profile.jpg" />
@@ -27,6 +27,6 @@ To get away from computer screens and all the nerdy IT stuff I like to spend my 
 
 ## This website
 
-Looking for a way to **easily** provide all information, documentation and tutorials of my projects in **one place** I found this solution as a combination of my own domain, GitHub Pages and VuePress.
+Looking for a way to **easily** provide all information, documentation and tutorials of my projects in **one place** I found this solution as a combination of my own domain, [GitHub Pages](https://pages.github.com/) and [VuePress](https://v2.vuepress.vuejs.org/).
 
 As my old solution with wordpress was eating a lot of time writing an managing it, I will now try to keep it as simple as possible. 

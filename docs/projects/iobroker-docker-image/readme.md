@@ -52,13 +52,13 @@ For further details please check out [iobroker.net](https://www.iobroker.net).
 
 ### What is Docker?
 
-Docker is an open source containerization platform that makes it easy to build, deploy and share applications in small containers. "Containerization" or "container virtualization" is the next step in virtualization technologies. While typical virtual machines use virtualized hardware to run a complete operating system, containers just include the absolute minimum of dependencies a software needs to run and directly share the kernel of the host system. Compared to virtual machines that saves a lot resources.
-Containers also act as little sandboxes which adds an additional security layer and makes it easy to move them from one host to another.
-For more information please check out the officials [Docker Docs](https://docs.docker.com) or take a small youtube break. There are tons of videos explaining what Docker is and how it works.
+Docker is an open source containerization platform that makes it easy to build, deploy and share applications in small containers. "Containerization" or "container virtualization" is the next step in virtualization technologies. While typical virtual machines use virtualized hardware to run a complete operating system, containers just include the absolute minimum of dependencies a software needs to run and directly share the kernel of the host system. Compared to virtual machines container virtualization lets you save a lot resources.<br>
+Containers also act as little sandboxes which adds an additional security layer and makes it easy to move them from one host to another.<br>
+For more information please check out the officials [Docker Docs](https://docs.docker.com) or take a small YouTube break. There are tons of videos explaining what Docker is and how it works.
 
 ## Docs
 
-The very basic information about how to run the ioBroker Docker image can be found at the Docker Hub page. For further, more detailed instructions you should check out the official docs with the following content: 
+The very basic information about how to run the ioBroker Docker image can be found at the [Docker Hub page](https://hub.docker.com/r/buanet/iobroker). For further, more detailed instructions you should check out the official docs with the following content: 
 
 * [Getting Started](/projects/iobroker-docker-image/docs.md#getting-started)
   * [Running from command-line](/projects/iobroker-docker-image/docs.md#running-from-command-line)
@@ -71,9 +71,12 @@ The very basic information about how to run the ioBroker Docker image can be fou
   * [Startup scripts](/projects/iobroker-docker-image/docs.md#startup-scripts)
   * [Multihost](/projects/iobroker-docker-image/docs.md#multihost)
 * [Maintenance](/projects/iobroker-docker-image/docs.md#maintenance)
-  * [Backup & Restore](/projects/iobroker-docker-image/docs.md#backup-restore)
+  * [Healthcheck](/projects/iobroker-docker-image/docs.md#healthcheck)
+  * [Backup](/projects/iobroker-docker-image/docs.md#backup)
+  * [Restore](/projects/iobroker-docker-image/docs.md#restore)
   * [Updates & Upgrades](/projects/iobroker-docker-image/docs.md#updates-upgrades)
 * [Best practices](/projects/iobroker-docker-image/docs.md#best-practices)
+  * [Avoid using latest tag](/projects/iobroker-docker-image/docs.md#avoid-using-latest-tag)
   * [Use maintenance script (beta)](/projects/iobroker-docker-image/docs.md#use-maintenance-script-beta)
   * [Migrating states to redis](/projects/iobroker-docker-image/docs.md#migrating-states-to-redis)
 * [Miscellaneous](/projects/iobroker-docker-image/docs.md#miscellaneous)

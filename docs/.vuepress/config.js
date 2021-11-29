@@ -15,10 +15,11 @@ module.exports = {
     locales: {
       '/': {
         selectLanguageName: 'English',
+        selectLanguageText: 'Language',
         navbar: [
           // NavbarItem
           {
-            text: 'About',
+            text: 'About me',
             link: '/about/',
           },
           // NavbarGroup
@@ -39,14 +40,32 @@ module.exports = {
               },
             ],
           },
-          {
-            text: 'Tutorials',
-            link: '/tutorials/',
-          },
+          //{
+          //  text: 'Tutorials',
+          //  link: '/tutorials/',
+          //},
         ],
       },
       '/de/': {
         selectLanguageName: 'Deutsch',
+        selectLanguageText: 'Sprache',
+        navbar: [
+          // NavbarItem
+          {
+            text: 'Über mich',
+            link: '/de/about/',
+          },
+          // NavbarGroup
+          //{
+          //  text: 'Tutorials',
+          //  children: [
+          //    {
+          //      text: 'ioBroker',
+          //      link: '/de/tutorials/#iobroker'
+          //    },
+          //  ],
+          // },
+        ],
       },
     },
     logo: '/images/logo.png',
