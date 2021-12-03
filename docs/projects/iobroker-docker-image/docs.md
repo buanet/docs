@@ -32,9 +32,9 @@ permalink: /iobroker-docker-image/docs
 
 # ioBroker Docker Image Docs
 
-This is the official documentation about the ioBroker Docker image. It covers everything you need to set up and configure a ioBroker Docker container.
+This is the official documentation for the ioBroker Docker image. It covers everything you need to set up and configure a ioBroker Docker container.
 
-If you got questions on how to configure your ioBroker and its adapters please refer to the [official ioBroker documentation](https://www.iobroker.net/#en/documentation). 
+If you got questions on how to configure your ioBroker and its adapters please refer to the [Official ioBroker Docs](https://www.iobroker.net/#en/documentation). 
 
 ## Getting Started
 
@@ -56,6 +56,10 @@ For taking a first look at the iobroker docker container it would be enough to s
 docker run -p 8081:8081 --name iobroker -v iobrokerdata:/opt/iobroker buanet/iobroker:latest
 ```
 
+::: tip TIP
+It is always a good choice to avoid using the "latest" tag for production. For more details see ["Best practices"](/iobroker-docker-image/docs/#best-practices).
+:::
+
 ### Running with docker-compose
 
 You can also run iobroker by using docker-compose. Here is an example:
@@ -75,11 +79,15 @@ services:
       - iobrokerdata:/opt/iobroker
 ```
 
+::: tip TIP
+It is always a good choice to avoid using the "latest" tag for production. For more details see ["Best practices"](/iobroker-docker-image/docs/#best-practices).
+:::
+
 ## Persistent data
 
 It is absolutely recommended to mount an (empty) folder or Docker volume to `/opt/iobroker` during first startup of your container. The startup script will check this folder and install ioBroker if it is empty. After ioBroker is installed/ started successfully this folder will contain your whole ioBroker setup. So if your container crashes or you simply have to do some changes to it you can just deploy a new one and mount the folder/ volume again without loosing your ioBroker config. 
 
-::: warning Note
+::: warning NOTE
 If you use a shared storage oder external devices mounted to your Docker host to store the iobroker folder make sure the mount point on your host does NOT have the "noexec" flag activated. Otherwise you will get problems executing ioBroker inside the container! For mor details please take a look at the corresponding [Github issues](https://github.com/buanet/ioBroker.docker/issues?q=is%3Aissue+noexec)
 :::
 
@@ -109,7 +117,7 @@ You do not have to declare every single variable when setting up your container.
 |USBDEVICES|none|Sets relevant permissions on mounted devices like "/dev/ttyACM0", for more than one device separate with ";" like this: "/dev/ttyACM0;/dev/ttyACM1"|
 |ZWAVE|false|Will install openzwave to support zwave-adapter, can be "true" or "false"|
 
-::: warning Note
+::: warning NOTE
 In v4.2.0 the environment variables "ADMINPORT" and "REDIS" were renamed/ reorganized. Please check when migrating your Docker image from a lower version. 
 :::
 
@@ -143,7 +151,7 @@ With the help of the ENV "IOB_MULTIHOST" and the ENVs for objects and states db 
 
 There is no need for executing `iobroker multihost enable` or `iobroker multihost connect` inside the container. Just configure the mentioned ENVs. The startup script will do all the magic.
 
-For general information about iobroker multihost feature please see [official ioBroker documentation](https://www.iobroker.net/docu/index-24.htm?page_id=3068&lang=de).
+For general information about iobroker multihost feature please see [Official ioBroker Docs](https://www.iobroker.net/docu/index-24.htm?page_id=3068&lang=de).
 
 ## Maintenance
 
@@ -159,15 +167,15 @@ As the Docker daemon itself gives no opportunity to automatically restart an unh
 
 ### Backup
 
-The easiest way to backup your ioBroker configuration is to use the builtin `iobroker backup` command or the iobroker.backitup adapter like described at the official ioBroker Docs. 
+The easiest way to backup your ioBroker configuration is to use the builtin `iobroker backup` command or the iobroker.backitup adapter like described at the [Official ioBroker Docs](https://www.iobroker.net/#en/documentation). 
 
 You are also able to backup (e.g. tar or copy) the whole directory you mounted into your ioBroker container on the Docker host. 
 
 ### Restore
 
-Restoring your Data can be done by using the ioBroker builtin options like `iobroker restore` command or the iobroker.backitup adapter like described at the official ioBroker Docs.  
+Restoring your Data can be done by using the ioBroker builtin options like `iobroker restore` command or the iobroker.backitup adapter like described at the [Official ioBroker Docs](https://www.iobroker.net/#en/documentation).  
 
-::: tip PRO TIP
+::: tip TIP
 When setting up a new container it is also possible to restore a backup by putting a single backup file into the empty folder which is mounted to /opt/iobroker in your ioBroker container. Please make sure the name of your backup file ends like this: `*_backupiobroker.tar.gz`.<br>
 The startup script of the container then will detect this backup file and restore it during the first start of the container. Please see container logs to follow the restore process and get more details!
 :::
@@ -175,8 +183,8 @@ The startup script of the container then will detect this backup file and restor
 
 ### Updates & Upgrades
 
-::: warning WARNING
-Be sure to have a backup of your ioBroker before applying any updates! 
+::: danger WARNING
+Be sure to have a valid backup of your ioBroker installation before applying any updates! 
 :::
 
 #### Linux system (package) updates 
@@ -187,7 +195,7 @@ apt-get update && apt-get upgrade
 As this updates will still be included in an actual ioBroker Docker Image, it might be a best practice attempt to simply recreate your container with the actual image instead ob applying the updates manually on the command line. 
 
 #### ioBroker Adapter updates
-Typically you will be notified about and can install these updates in the ioBroker admin interface. See [official ioBroker documentation](https://www.iobroker.net/#en/documentation) for details.
+Typically you will be notified about and can install these updates in the ioBroker admin interface. See [Official ioBroker Docs](https://www.iobroker.net/#en/documentation) for details.
 
 #### ioBroker js-controller (core) updates
 Typically you will be notified about js-controller updates in the ioBroker admin interface. As ioBroker has to be stopped to apply these updates it is not able to install it from the admin interface. You have to do it manually on the containers command line.
@@ -199,7 +207,7 @@ iobroker upgrade self
 After this you have to restart your container.
 
 ::: tip TIP
-For this update you can also use the builtin ioBroker maintenance script as described at the "Best practices" section. 
+To easily apply js-controller updates you can also use the maintenance script. For more details see ["Best practices"](/iobroker-docker-image/docs/#best-practices).
 :::
 
 #### Upgrades
@@ -236,7 +244,7 @@ Simply type `maintenance --help` on the containers command line to see what the 
 
 ### Migrating states to redis
 
-If you want to switch ioBroker states db from file to redis in an existing container you might want to keep all your actual states and move them to redis. As simply setting the needed ENVs won't migrate your existing states into the redis db (it would just start with an empty database) it is best practice to first run "iobroker setup custom" in your containers command line before adding the ENVs (your redis container should still be up and running). During the wizard you will configure your iobroker to connect to the redis db and get the choice to migrate your states into the new database. For more details how to configure ioBroker to connect to redis, please refer to  the [official ioBroker documentation](https://www.iobroker.net/#en/documentation).
+If you want to switch ioBroker states db from file to redis in an existing container you might want to keep all your actual states and move them to redis. As simply setting the needed ENVs won't migrate your existing states into the redis db (it would just start with an empty database) it is best practice to first run "iobroker setup custom" in your containers command line before adding the ENVs (your redis container should still be up and running). During the wizard you will configure your iobroker to connect to the redis db and get the choice to migrate your states into the new database. For more details how to configure ioBroker to connect to redis, please refer to  the [Official ioBroker Docs](https://www.iobroker.net/#en/documentation).
 
 ## Miscellaneous
 
