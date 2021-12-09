@@ -155,16 +155,6 @@ For general information about iobroker multihost feature please see [Official io
 
 ## Maintenance
 
-### Healthcheck
-
-Since v5.1.0 the image contains a Docker healthcheck. It simply checks if js-controller is running inside the container and reports the container as "healthy" or "unhealthy" to the Docker daemon.
-
-The healthcheck itself is configured to 5 retries in an 15s interval with a timeout of 5s. So a container needs a minimum of one minute to get unhealthy after the js-controller was killed.
-
-::: tip TIP
-As the Docker daemon itself gives no opportunity to automatically restart an unhealthy container you might want to setup some kind of "watchdog container" like this simple one: https://github.com/buanet/docker-watchdog.
-:::
-
 ### Backup
 
 The easiest way to backup your ioBroker configuration is to use the builtin `iobroker backup` command or the iobroker.backitup adapter like described at the [Official ioBroker Docs](https://www.iobroker.net/#en/documentation). 
@@ -229,6 +219,16 @@ This means it will be the best and less risky way to perform your upgrade with t
 6. Start the new container and follow the process in the containers logs 
 
 Now your ioBroker should be restored automatically and starts up the admin interface. After that it will automatically start to install missing adapters. You can watch the Process at the ioBroker Logs. When all Adapters are installed (this might take some time) you will be able to start your instances in the instances tab of the ioBroker admin interface.
+
+### Healthcheck
+
+Since v5.1.0 the image contains a Docker healthcheck. It simply checks if js-controller is running inside the container and reports the container as "healthy" or "unhealthy" to the Docker daemon.
+
+The healthcheck itself is configured to 5 retries in an 15s interval with a timeout of 5s. So a container needs a minimum of one minute to get unhealthy after the js-controller was killed.
+
+::: tip TIP
+As the Docker daemon itself gives no opportunity to automatically restart an unhealthy container you might want to setup some kind of "watchdog container" like this simple one: https://github.com/buanet/docker-watchdog.
+:::
 
 ## Best practices
 
