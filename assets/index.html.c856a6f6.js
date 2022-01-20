@@ -1,0 +1,1 @@
+const t={key:"v-7a754bcd",path:"/projects/php-contact-form/",title:"Simple PHP contact form",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1642674811e3},filePathRelative:"projects/php-contact-form/readme.md"};export{t as data};

@@ -1,0 +1,1 @@
+const e={key:"v-11df849c",path:"/projects/docker-raspberryos/",title:"Docker Raspberry OS Image",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1642674811e3},filePathRelative:"projects/docker-raspberryos/readme.md"};export{e as data};
