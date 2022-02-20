@@ -55,6 +55,19 @@ module.exports = {
             text: 'Über mich',
             link: '/de/about/',
           },
+          {
+            text: 'Tutorials',
+            children: [
+              //{
+              //  text: 'Docker',
+              //  children: ['/projects/iobroker-docker-image/readme.md', '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'],
+              //},
+              {
+                text: 'ioBroker',
+                children: ['/de/tutorials/iobroker/20210114.md'],
+              },
+            ],
+          },
           // NavbarGroup
           //{
           //  text: 'Tutorials',

@@ -3,7 +3,7 @@ home: true
 heroText: null
 tagline: null
 title: Willkommen
-footer: Copyright © 2021 André Germann
+footer: Copyright © 2022 André Germann
 head:
   - - meta
     - name: description
