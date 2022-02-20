@@ -1,0 +1,1 @@
+const e={key:"v-138024b3",path:"/projects/iobroker-raspberryos/",title:"ioBroker Raspberry OS Image",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1645315748e3},filePathRelative:"projects/iobroker-raspberryos/readme.md"};export{e as data};
