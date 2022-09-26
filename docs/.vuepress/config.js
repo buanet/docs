@@ -1,3 +1,6 @@
+const { defaultTheme } = require('vuepress')
+const { searchPlugin } = require('@vuepress/plugin-search')
+
 module.exports = {
   locales: {
       '/': {
@@ -11,7 +14,7 @@ module.exports = {
         description: 'Lerne mehr über meine Projekte.',
       },
     },
-  themeConfig: {
+  theme: defaultTheme({
     locales: {
       '/': {
         selectLanguageName: 'English',
@@ -24,26 +27,39 @@ module.exports = {
           },
           // NavbarGroup
           {
-            text: 'Projects & Docs',
+            text: 'Projects',
             children: [
               {
                 text: 'Docker Images',
-                children: ['/projects/iobroker-docker-image/readme.md', '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'],
+                children: ['/projects/iobroker-docker-image/readme.md'/*, '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'*/],
               },
-              {
-                text: 'Raspberry OS Images',
-                children: ['/projects/iobroker-raspberryos/readme.md', '/projects/docker-raspberryos/readme.md'],
-              },
-              {
-                text: 'Other',
-                children: ['/projects/php-contact-form/readme.md'],
-              },
+//              {
+//               text: 'Raspberry OS Images',
+//                children: ['/projects/iobroker-raspberryos/readme.md', '/projects/docker-raspberryos/readme.md'],
+//              },
+//              {
+//                text: 'Other',
+//                children: ['/projects/php-contact-form/readme.md'],
+//              },
             ],
           },
-          //{
-          //  text: 'Tutorials',
-          //  link: '/tutorials/',
-          //},
+          {
+            text: 'Docs',
+            children: ['/projects/iobroker-docker-image/docs.md'],
+          },
+//          {
+//            text: 'Tutorials',
+//            children: [
+              //{
+              //  text: 'Docker',
+              //  children: ['/projects/iobroker-docker-image/readme.md', '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'],
+              //},
+//              {
+//                text: 'ioBroker',
+//                children: ['/tutorials/iobroker/20210114.md'],
+//              },
+//            ],
+//          },
         ],
       },
       '/de/': {
@@ -56,18 +72,31 @@ module.exports = {
             link: '/de/about/',
           },
           {
-            text: 'Tutorials',
+            text: 'Projekte',
             children: [
+              {
+                text: 'Docker Images',
+                children: ['/de/projects/iobroker-docker-image/readme.md'],
+              },
+            ],
+          },
+          {
+            text: 'Doku',
+            children: ['/de/projects/iobroker-docker-image/docs.md'],
+          },
+//          {
+//            text: 'Tutorials',
+//            children: [
               //{
               //  text: 'Docker',
               //  children: ['/projects/iobroker-docker-image/readme.md', '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'],
               //},
-              {
-                text: 'ioBroker',
-                children: ['/de/tutorials/iobroker/20210114.md'],
-              },
-            ],
-          },
+//              {
+//                text: 'ioBroker',
+//                children: ['/de/tutorials/iobroker/20210114.md'],
+//              },
+//            ],
+//          },
           // NavbarGroup
           //{
           //  text: 'Tutorials',
@@ -85,21 +114,18 @@ module.exports = {
     logoDark: '/images/logo_dark.png',
     editLink: false,
     contributors: false,
-  },
+  }),
   plugins: [
-    [
-      '@vuepress/plugin-search',
-      {
-        locales: {
-          '/': {
-            placeholder: 'Search',
-          },
-          '/de/': {
-            placeholder: 'Suche',
-          },
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: 'Search',
+        },
+        '/de/': {
+          placeholder: 'Suche',
         },
       },
+      }),
     ],
-  ],
 }
   

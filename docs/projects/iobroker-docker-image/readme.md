@@ -54,7 +54,7 @@ For further details please check out [iobroker.net](https://www.iobroker.net).
 
 Docker is an open source containerization platform that makes it easy to build, deploy and share applications in small containers. "Containerization" or "container virtualization" is the next step in virtualization technologies. While typical virtual machines use virtualized hardware to run a complete operating system, containers just include the absolute minimum of dependencies a software needs to run and directly share the kernel of the host system. Compared to virtual machines container virtualization lets you save a lot resources.<br>
 Containers also act as little sandboxes which adds an additional security layer and makes it easy to move them from one host to another.<br>
-For more information please check out the officials [Docker Docs](https://docs.docker.com) or take a small YouTube break. There are tons of videos explaining what Docker is and how it works.
+For more information please check out the officials [Docker Docs](https://docs.docker.com) or take a small YouTube session. There are tons of videos explaining what Docker is and how it works.
 
 ## Docs
 
@@ -64,7 +64,7 @@ The very basic information about how to run the ioBroker Docker image can be fou
   * [Running from command-line](/projects/iobroker-docker-image/docs.md#running-from-command-line)
   * [Running with docker-compose](/projects/iobroker-docker-image/docs.md#running-with-docker-compose)
 * [Persistent data](/projects/iobroker-docker-image/docs.md#persistent-data)
-* [Environment variables](/projects/iobroker-docker-image/docs.md#environment-variables)
+* [Environment variables (ENV)](/projects/iobroker-docker-image/docs.md#environment-variables-env)
 * [Networks](/projects/iobroker-docker-image/docs.md#networks)
 * [Advanced configuration](/projects/iobroker-docker-image/docs.md#advanced-configuration)
   * [Mounting USB devices](/projects/iobroker-docker-image/docs.md#mounting-usb-devices)
@@ -74,24 +74,26 @@ The very basic information about how to run the ioBroker Docker image can be fou
   * [Backup](/projects/iobroker-docker-image/docs.md#backup)
   * [Restore](/projects/iobroker-docker-image/docs.md#restore)
   * [Updates & Upgrades](/projects/iobroker-docker-image/docs.md#updates-upgrades)
-  * [Healthcheck](/projects/iobroker-docker-image/docs.md#healthcheck)
-* [Best practices](/projects/iobroker-docker-image/docs.md#best-practices)
+  * [Docker Healthcheck](/projects/iobroker-docker-image/docs.md#docker-healthcheck)
+* [Best practice](/projects/iobroker-docker-image/docs.md#best-practice)
   * [Avoid using latest tag](/projects/iobroker-docker-image/docs.md#avoid-using-latest-tag)
-  * [Use maintenance script (beta)](/projects/iobroker-docker-image/docs.md#use-maintenance-script-beta)
+  * [Use maintenance script](/projects/iobroker-docker-image/docs.md#use-maintenance-script)
   * [Migrating states to redis](/projects/iobroker-docker-image/docs.md#migrating-states-to-redis)
 * [Miscellaneous](/projects/iobroker-docker-image/docs.md#miscellaneous)
   * [Beta testing](/projects/iobroker-docker-image/docs.md#beta-testing)
   * [Notes for developers](/projects/iobroker-docker-image/docs.md#notes-for-developers)
 
+<!--
 ## Tutorials
 
 While the docs are kept general I made some Tutorials you can follow step-by-step to successfully set up your container. 
 
 Links Coming soon!
+-->
 
 ## Support the project
 
 The easiest way to support this project is to leave me some likes/ stars on Github and Docker Hub!<br>
 If you want to give something back, feel free to take a look into the [open issues](https://github.com/buanet/ioBroker.docker/issues) or the [ioBroker forum thread](http://forum.iobroker.net/viewtopic.php?f=17&t=5089) and helping me answering questions, fixing bugs or adding new features!<br>
-If you want to buy me a beer instead, you can do this here: <a href="https://www.paypal.me/buanet" target="_blank"><img src="https://buanet.de/wp-content/uploads/2017/08/pp128.png" height="20" width="20"></a><br>
+If you want to buy me a pizza instead, you can do this here: <a href="https://www.paypal.me/buanet" target="_blank"><img src="https://buanet.de/wp-content/uploads/2017/08/pp128.png" height="20" width="20"></a><br>
 Thank you!

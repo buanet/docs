@@ -56,7 +56,7 @@ For taking a first look at the iobroker docker container it would be enough to s
 docker run -p 8081:8081 --name iobroker -v iobrokerdata:/opt/iobroker buanet/iobroker:latest
 ```
 
-::: tip TIP
+::: tip Pro Tip
 It is always a good choice to avoid using the "latest" tag for production. For more details see ["Best practices"](/iobroker-docker-image/docs/#best-practices).
 :::
 
@@ -79,7 +79,7 @@ services:
       - iobrokerdata:/opt/iobroker
 ```
 
-::: tip TIP
+::: tip Pro Tip
 It is always a good choice to avoid using the "latest" tag for production. For more details see ["Best practices"](/iobroker-docker-image/docs/#best-practices).
 :::
 
@@ -103,10 +103,10 @@ You do not have to declare every single variable when setting up your container.
 |IOB_MULTIHOST|[not set]|Sets ioBroker instance as "master" or "slave" for multihost support (needs additional config for objectsdb and statesdb!)|
 |IOB_OBJECTSDB_HOST|127.0.0.1|Sets host for ioBroker objects db|
 |IOB_OBJECTSDB_PORT|9001|Sets port for ioBroker objects db|
-|IOB_OBJECTSDB_TYPE|file|Sets type of ioBroker objects db, cloud be "file" or "redis" <br>(at the moment redis as objects db is [not officially supported by ioBroker](https://github.com/ioBroker/ioBroker#databases))|
+|IOB_OBJECTSDB_TYPE|jsonl|Sets type of ioBroker objects db, could be "jsonl", "file" (deprecated) or "redis" <br>(at the moment redis as objects db is [not officially supported by ioBroker](https://github.com/ioBroker/ioBroker#databases))|
 |IOB_STATESDB_HOST|127.0.0.1|Sets host for ioBroker states db|
 |IOB_STATESDB_PORT|9000|Sets port for ioBroker states db|
-|IOB_STATESDB_TYPE|file|Sets type of ioBroker states db, could be "file" or "redis"|
+|IOB_STATESDB_TYPE|jsonl|Sets type of ioBroker states db, could be "jsonl", "file" (deprecated) or "redis"|
 |LANG|de_DE.UTF&#x2011;8|The following locales are pre-generated: de_DE.UTF-8, en_US.UTF-8|
 |LANGUAGE|de_DE:de|The following locales are pre-generated: de_DE:de, en_US:en|
 |LC_ALL|de_DE.UTF-8|The following locales are pre-generated: de_DE.UTF-8, en_US.UTF-8|
@@ -157,17 +157,22 @@ For general information about iobroker multihost feature please see [Official io
 
 ### Backup
 
-The easiest way to backup your ioBroker configuration is to use the builtin `iobroker backup` command or the iobroker.backitup adapter like described at the [Official ioBroker Docs](https://www.iobroker.net/#en/documentation). 
+The easiest way to backup your ioBroker config is to use the builtin ["iobroker backup" command](https://www.iobroker.net/docu/index-98.htm?page_id=3971&lang=de#iobroker_backup) or the [iobroker.backitup adapter](https://github.com/simatec/ioBroker.backitup/blob/master/docs/de/backitup.md).
 
-You are also able to backup (e.g. tar or copy) the whole directory you mounted into your ioBroker container on the Docker host. 
+Another option is to simply tar or copy the whole directory you mounted into your ioBroker container on the Docker host. Make sure ioBroker container is stopped when backing up the directory.
+
+#### Enable database backups in iobroker.backitup
+
+Per default there are some limitations in backing up external databases (InfluxDB, PostgresSQL, MySQL) with iobroker.backitup adapter when running inside a Docker container.
+Take a look at [this small guide](docs_backitup.md) on how to enable them. 
 
 ### Restore
 
 Restoring your Data can be done by using the ioBroker builtin options like `iobroker restore` command or the iobroker.backitup adapter like described at the [Official ioBroker Docs](https://www.iobroker.net/#en/documentation).  
 
-::: tip TIP
-When setting up a new container it is also possible to restore a backup by putting a single backup file into the empty folder which is mounted to /opt/iobroker in your ioBroker container. Please make sure the name of your backup file ends like this: `*_backupiobroker.tar.gz`.<br>
-The startup script of the container then will detect this backup file and restore it during the first start of the container. Please see container logs to follow the restore process and get more details!
+::: tip Pro Tip 
+When setting up a new container simply place your backup file into the empty folder which you will mount to /opt/iobroker. Please make sure the name of your backup file ends like this: `*_backupiobroker.tar.gz`.<br>
+The containers startup script will recognize the file and prepare it for restore. When your container ist sucessfully started you will be able to restore you ioBroker by using the web ui of backitup or the commandline of your Docker container.  
 :::
 
 
@@ -196,7 +201,7 @@ iobroker upgrade self
 ```
 After this you have to restart your container.
 
-::: tip TIP
+::: tip Pro Tip
 To easily apply js-controller updates you can also use the maintenance script. For more details see ["Best practices"](/iobroker-docker-image/docs/#best-practices).
 :::
 
@@ -220,27 +225,27 @@ This means it will be the best and less risky way to perform your upgrade with t
 
 Now your ioBroker should be restored automatically and starts up the admin interface. After that it will automatically start to install missing adapters. You can watch the Process at the ioBroker Logs. When all Adapters are installed (this might take some time) you will be able to start your instances in the instances tab of the ioBroker admin interface.
 
-### Healthcheck
+### Docker Healthcheck
 
 Since v5.1.0 the image contains a Docker healthcheck. It simply checks if js-controller is running inside the container and reports the container as "healthy" or "unhealthy" to the Docker daemon.
 
 The healthcheck itself is configured to 5 retries in an 15s interval with a timeout of 5s. So a container needs a minimum of one minute to get unhealthy after the js-controller was killed.
 
-::: tip TIP
+::: tip Pro Tip
 As the Docker daemon itself gives no opportunity to automatically restart an unhealthy container you might want to setup some kind of "watchdog container" like this simple one: https://github.com/buanet/docker-watchdog.
 :::
 
-## Best practices
+## Best practice
 
 ### Avoid using latest tag
 
 The Docker tag "latest" (buanet/iobroker:latest) will always pull the latest available version of the ioBroker Docker image. This might cause some trouble when it changes to a new major version of the docker image.
-To avoid this you always should use a single version tag (e.g. buanet/iobroker:v5.2.0) or the major versions latest tag (e.g. buanet/iobroker:latest-v5) when creating your Docker image for production.  
+To avoid this you always should use a single version tag (e.g. buanet/iobroker:v5.2.0) or the major versions latest tag (e.g. buanet/iobroker:latest-v5) when creating your Docker container for production.  
 
-### Use maintenance script (beta)
+### Use maintenance script
 
-There is now a maintenance script coming with the actual ioBroker Docker images. You can use this script to set your container into maintenance mode (stops ioBroker but keeps container healthy) and apply js-controller updates (more options will follow). 
-Simply type `maintenance --help` on the containers command line to see what the script can do. Feedback welcome!
+The ioBrocker Docker image includes a maintenance script which helps you to manage your ioBroker Docker container. For example you can use this script to set your container into maintenance mode (stops ioBroker but keeps container healthy) and apply js-controller updates (more options will follow). 
+Simply type `maintenance --help` on the containers command line to see what the script can do for you.
 
 ### Migrating states to redis
 
@@ -250,7 +255,8 @@ If you want to switch ioBroker states db from file to redis in an existing conta
 
 ### Beta testing
 
-If you want to get the newest features and changes feel free to use/ test the beta version of the Docker image. You can find the readme.md file for beta versions [here](https://github.com/buanet/ioBroker.docker/blob/beta/README.md). Please make sure to read the changelog before testing beta versions.
+If you want to get the newest features and fixes feel free to use/ test the beta version of the Docker image. For more information take a look at the [Docker image releases](https://github.com/buanet/ioBroker.docker/releases) and/ or join our discussion on [ioBroker Discord > Beta Testing & Feedback > docker-image](https://discord.gg/kN7nhx6C).<br>Thank you. 
+
 
 ### Notes for developers
 
