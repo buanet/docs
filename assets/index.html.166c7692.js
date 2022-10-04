@@ -1,1 +1,0 @@
-import{_ as t,o,c as a,b as e,d as s}from"./app.9b080800.js";const n={},c=e("h1",{id:"tutotials",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#tutotials","aria-hidden":"true"},"#"),s(" Tutotials")],-1),r=e("p",null,"Coming soon!",-1),i=[c,r];function _(d,l){return o(),a("div",null,i)}var u=t(n,[["render",_],["__file","index.html.vue"]]);export{u as default};
