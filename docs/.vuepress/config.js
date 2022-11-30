@@ -31,19 +31,19 @@ module.exports = {
               text: 'Docker Images',
               children: ['/projects/iobroker-docker-image/readme.md'/*, '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'*/],
             },
-            //              {
-            //               text: 'Raspberry OS Images',
-            //                children: ['/projects/iobroker-raspberryos/readme.md', '/projects/docker-raspberryos/readme.md'],
-            //              },
+            {
+              text: 'Raspberry OS Images',
+              children: ['/projects/iobroker-raspberrypios-image/readme.md'/*, '/projects/docker-raspberrypios/readme.md'*/],
+            },
             //              {
             //                text: 'Other',
             //                children: ['/projects/php-contact-form/readme.md'],
             //              },
-          ],
+            ],
         },
         {
           text: 'Docs',
-          children: ['/projects/iobroker-docker-image/docs.md'],
+          children: ['/projects/iobroker-docker-image/docs.md', '/projects/iobroker-raspberrypios-image/docs.md'],
         },
         //          {
         //            text: 'Tutorials',
@@ -76,11 +76,15 @@ module.exports = {
               text: 'Docker Images',
               children: ['/de/projects/iobroker-docker-image/readme.md'],
             },
+            {
+              text: 'Raspberry OS Images',
+              children: ['/de/projects/iobroker-raspberrypios-image/readme.md'/*, '/de/projects/docker-raspberrypios/readme.md'*/],
+            },
           ],
         },
         {
           text: 'Doku',
-          children: ['/de/projects/iobroker-docker-image/docs.md'],
+          children: ['/de/projects/iobroker-docker-image/docs.md', '/de/projects/iobroker-raspberrypios-image/docs.md'],
         },
         //          {
         //            text: 'Tutorials',

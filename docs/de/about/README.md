@@ -25,6 +25,24 @@ Ich bin Familienvater und Smarthome-Besitzer und arbeite als Fachinformatiker be
 
 Um von Computerbildschirmen und all dem nerdigen IT-Zeug wegzukommen verbringe ich meine Freizeit auch gerne mit meiner Familie und Freunden bei Outdoor-Aktivitäten wie Wandern, Radfahren und Geocaching.
 
+### Wo man mich findet 
+
+<a href="https://github.com/buanet" target="_blank"><img src='/images/profile/github.png' alt="Github Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://discordapp.com/users/591003148542279690" target="_blank"><img src='/images/profile/discord.png' alt="Discord Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://t.me/buanet" target="_blank"><img src='/images/profile/telegram.png' alt="Telegram Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://forum.iobroker.net/user/andre" target="_blank"><img src='/images/profile/iobroker.png' alt="ioBroker Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.xing.com/profile/Andre_Germann3/cv" target="_blank"><img src='/images/profile/xing.png' alt="Xing Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;
+<!--
+<a href="https://www.youtube.com/@andre.buanet/" target="_blank"><img src='/images/profile/youtube.png' alt="Youtube Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/buanetde" target="_blank"><img src='/images/profile/twitter.png' alt="Twitter Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;
+-->
+
 ## Diese Webseite
 
-Um möglichst **einfach** alle Informationen, Dokumentationen und Tutorials zu meinen Projekten **an einem Ort** bereitstellen zu können, habe ich mich für eine Kombination aus eigener Domain, [GitHub Pages](https://pages.github.com/) und [VuePress](https://v2.vuepress.vuejs.org/) entschieden. Im Gegensatz zur bisherigen Lösung mit WordPress spare ich so viel Zeit beim Schreiben und Verwalten.
+Auf der Suche nach einer Lösung um möglichst **einfach** alle Informationen, Dokumentationen und Tutorials zu meinen Projekten **an einem Ort** bereitstellen zu können, habe ich mich für eine Kombination aus eigener Domain, [GitHub Pages](https://pages.github.com/) und [VuePress](https://v2.vuepress.vuejs.org/) entschieden.
+
+Falls du daran interessiert bist wie diese Website gebaut wurde, wirf einen Blick in den [Quellcode](https://github.com/buanet/docs). 
+
+### Kein Tracking, keine Werbung
+
+Diese Website kommt vollständig ohne Tracking, Werbung oder kostenpflichtige Inhalte aus!

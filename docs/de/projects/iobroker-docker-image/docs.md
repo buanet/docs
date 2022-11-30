@@ -154,7 +154,7 @@ Allgemeine Informationen zur Multihost-Funktion von ioBroker findest du in der [
 
 Der einfachst Weg deinen ioBroker zu sichern ist die Verwendung des integrierten ["iobroker backup"](https://www.iobroker.net/docu/index-98.htm?page_id=3971&lang=de#iobroker_backup) Kommandos oder des [iobroker.backitup Adapters](https://github.com/simatec/ioBroker.backitup/blob/master/docs/de/backitup.md).
 
-Eine Weitere Möglichkeit ist das Sichern des Verzeichnisses, welches du unter "/opt/iobroker" in den ConTainer gemountet hast. Die Sicherung erfolgt dabei über den Docker Host. Beim Kopieren, Verschieben oder Packen der Dateien sollte der ioBroker Container gestoppt sein.  
+Eine Weitere Möglichkeit ist das Sichern des Verzeichnisses, welches du unter "/opt/iobroker" in den Container gemountet hast. Die Sicherung erfolgt dabei über den Docker Host. Beim Kopieren, Verschieben oder Packen der Dateien sollte der ioBroker Container gestoppt sein.  
 
 ### Wiederherstellung
 
@@ -260,3 +260,11 @@ Falls du stets die neusten Korrekturen und Funktionen des Docker Images nutzen m
 ### Hinweise für Entwickler
 
 ...sind leider nur in [englisch](/iobroker-docker-image/docs/#notes-for-developers) verfügbar.
+
+---
+
+#### :warning: In Arbeit :warning:
+
+Diese Dokumentation ist noch in Arbeit. Wenn du Verbesserungsvorschläge hast, lass es mich wissen indem du einen [issue](https://github.com/buanet/docs/issues) meldest oder gleich [selbst editierst](https://github.com/buanet/docs/blob/main/docs/de/projects/iobroker-docker-image/docs.md) und einen pull request erstellst.
+
+Falls noch Fragen unbeantwortet geblieben sind, schaue gerne in der ioBroker Community auf Discord, Telegram, Facebook oder im [ioBroker Forum](https://forum.iobroker.net) vorbei.

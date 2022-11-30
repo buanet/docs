@@ -94,32 +94,31 @@ If you use a shared storage oder external devices mounted to your Docker host to
 ## Environment variables (ENV)
 
 To configure your ioBroker container as you need it, it is possible to set some environment variables.
-You do not have to declare every single variable when setting up your container. Variables you do not set will come up with their default value.
+Please only set the variables where you need to change the default value. Variables you do not set and are marked as "Set by default = yes" will be automatically set using their default values when your run a new container. 
 
-|ENV|Default|Description|
-|---|---|---|
-|AVAHI|false|Installs and activates avahi-daemon for supporting yahka-adapter, can be "true" or "false"|
-|IOB_ADMINPORT|8081|Sets ioBroker adminport on startup|
-|IOB_MULTIHOST|[not set]|Sets ioBroker instance as "master" or "slave" for multihost support (needs additional config for objectsdb and statesdb!)|
-|IOB_OBJECTSDB_HOST|127.0.0.1|Sets host for ioBroker objects db|
-|IOB_OBJECTSDB_PORT|9001|Sets port for ioBroker objects db|
-|IOB_OBJECTSDB_TYPE|jsonl|Sets type of ioBroker objects db, could be "jsonl", "file" (deprecated) or "redis" <br>(at the moment redis as objects db is [not officially supported by ioBroker](https://github.com/ioBroker/ioBroker#databases))|
-|IOB_STATESDB_HOST|127.0.0.1|Sets host for ioBroker states db|
-|IOB_STATESDB_PORT|9000|Sets port for ioBroker states db|
-|IOB_STATESDB_TYPE|jsonl|Sets type of ioBroker states db, could be "jsonl", "file" (deprecated) or "redis"|
-|LANG|de_DE.UTF&#x2011;8|The following locales are pre-generated: de_DE.UTF-8, en_US.UTF-8|
-|LANGUAGE|de_DE:de|The following locales are pre-generated: de_DE:de, en_US:en|
-|LC_ALL|de_DE.UTF-8|The following locales are pre-generated: de_DE.UTF-8, en_US.UTF-8|
-|PACKAGES|[not set]|Installs additional linux packages to your container, packages should be seperated by whitespace like this: "package1 package2 package3"|
-|SETGID|1000|For some reasons it might be useful to specify the gid of the containers iobroker user to match an existing group on the docker host|
-|SETUID|1000|For some reasons it might be useful to specify the uid of the containers iobroker user to match an existing user on the docker host|
-|TZ|Europe/Berlin|All valid Linux-timezones|
-|USBDEVICES|none|Sets relevant permissions on mounted devices like "/dev/ttyACM0", for more than one device separate with ";" like this: "/dev/ttyACM0;/dev/ttyACM1"|
-|ZWAVE|false|Will install openzwave to support zwave-adapter, can be "true" or "false"|
-
-::: warning NOTE
-In v4.2.0 the environment variables "ADMINPORT" and "REDIS" were renamed/ reorganized. Please check when migrating your Docker image from a lower version. 
-:::
+|ENV|Set by<br>default|Default<br>Value|Description|
+|---|---|---|---|
+|AVAHI|no|false|Installs and activates avahi-daemon for supporting yahka-adapter, can be "true" or "false"|
+|DEBUG|no|false|Activates extended log output for your container, can be "true" or "false"|
+|IOB_ADMINPORT|no|8081|Sets ioBroker adminport on startup|
+|IOB_BACKITUP_EXTDB|no|false|:exclamation: ONLY AVAILABLE IN BETA :exclamation:<br>Activates backing up external databases in ioBroker backitup adapter, can be "true" or "false" (!!! Make sure your have read [this](#backup) !!!)|
+|IOB_MULTIHOST|no|none|Sets ioBroker instance as "master" or "slave" for multihost support|
+|IOB_OBJECTSDB_HOST|no|127.0.0.1|Sets host for ioBroker objects db|
+|IOB_OBJECTSDB_PORT|no|9001|Sets port for ioBroker objects db|
+|IOB_OBJECTSDB_TYPE|no|jsonl|Sets type of ioBroker objects db, could be "jsonl", "file" (deprecated) or "redis" <br>(at the moment redis as objects db is [not officially supported by ioBroker](https://github.com/ioBroker/ioBroker#databases))|
+|IOB_STATESDB_HOST|no|127.0.0.1|Sets host for ioBroker states db|
+|IOB_STATESDB_PORT|no|9000|Sets port for ioBroker states db|
+|IOB_STATESDB_TYPE|no|jsonl|Sets type of ioBroker states db, could be "jsonl", "file" (deprecated) or "redis"|
+|LANG|yes|de_DE.UTF&#x2011;8|The following locales are pre-generated: de_DE.UTF-8, en_US.UTF-8|
+|LANGUAGE|yes|de_DE:de|The following locales are pre-generated: de_DE:de, en_US:en|
+|LC_ALL|yes|de_DE.UTF-8|The following locales are pre-generated: de_DE.UTF-8, en_US.UTF-8|
+|PACKAGES|no|none|Installs additional linux packages to your container, packages should be seperated by whitespace like this: "package1 package2 package3"|
+|PERMISSION_CHECK|no|true|:exclamation: ONLY AVAILABLE IN BETA :exclamation:<br>Checks and corrects all relevant permissions on container startup, can be "true" or "false" (!!! Use at your own risk !!!)|
+|SETGID|yes|1000|For some reasons it might be useful to specify the gid of the containers iobroker user to match an existing group on the docker host|
+|SETUID|yes|1000|For some reasons it might be useful to specify the uid of the containers iobroker user to match an existing user on the docker host|
+|TZ|yes|Europe/Berlin|Sets the containers timezone, all valid Linux-timezones are possible|
+|USBDEVICES|no|none|Sets relevant permissions on mounted devices like "/dev/ttyACM0", for more than one device separate with ";" like this: "/dev/ttyACM0;/dev/ttyACM1"|
+|ZWAVE|no|false|Installs openzwave to support zwave-adapter, can be "true" or "false"|
 
 ## Networks
 
@@ -161,10 +160,10 @@ The easiest way to backup your ioBroker config is to use the builtin ["iobroker 
 
 Another option is to simply tar or copy the whole directory you mounted into your ioBroker container on the Docker host. Make sure ioBroker container is stopped when backing up the directory.
 
-#### Enable database backups in iobroker.backitup
+#### Backup remote databases with iobroker.backitup in Docker
 
-Per default there are some limitations in backing up external databases (InfluxDB, PostgresSQL, MySQL) with iobroker.backitup adapter when running inside a Docker container.
-Take a look at [this small guide](docs_backitup.md) on how to enable them. 
+There are some limitations in backing up remote databases (Redis, InfluxDB, PostgresSQL, MySQL) with iobroker.backitup adapter when running inside a Docker container.
+[This small guide](docs_backitup.md) will help you to understand why options are grayed out by default and how to change it. 
 
 ### Restore
 
@@ -263,3 +262,11 @@ If you want to get the newest features and fixes feel free to use/ test the beta
 #### Detecting Docker environment
 
 For adapter developers it is now possible to easily detect if ioBroker is running inside the official docker container. Please simply check if the file `/opt/scripts/.docker_config/.thisisdocker` exists. The content of the file will always tell the image version.  
+
+---
+
+#### :warning: Work In Progress :warning:
+
+This documentation is still work in progress. If you got any improvements simply let me know by opening an [issue](https://github.com/buanet/docs/issues) or [edit it](https://github.com/buanet/docs/blob/main/docs/projects/iobroker-docker-image/docs.md) by yourself and create a pull request.
+
+If you got any unanswered questions please join the ioBroker community on Discord, Telegram, Facebook or [ioBroker Forum](https://forum.iobroker.net).

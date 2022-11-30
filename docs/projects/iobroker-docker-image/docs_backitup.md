@@ -2,7 +2,7 @@
 head:
   - - meta
     - name: description
-      content: "How to enable external database backups in iobroker.backitup."
+      content: "Backup remote databases with iobroker.backitup."
   - - meta
     - name: charset
       content: UTF‑8
@@ -32,12 +32,97 @@ permalink: /iobroker-docker-image/docs_backitup
 
 :arrow_backward: [back to "Official ioBroker Docker Image Docs - Backup"](docs.md#backup)
 
-# How to enable external database backups in iobroker.backitup
+::: danger  Work In Progress
+:warning:
+This documentation is still work in progress. If you got any improvements simply let me know by opening an [issue](https://github.com/buanet/docs/issues) or [edit it](https://github.com/buanet/docs/blob/main/docs/projects/iobroker-docker-image/docs_backitup.md) by yourself and create a pull request. Thank you.
+:::
 
-(Coming soon!)
+# Backup remote databases with iobroker.backitup
 
-## InfluxDB
+By default, the options for backing up remote databases are grayed out in iobroker.backitup settings when running inside a Docker container. This is made because backing up remote databases is not working "out of the box". This guide will give some information about how to make the settings available and what needs to be done to get the backup working.
 
-## MySQL
+## Prerequisites
 
-## Postgres SQL
+To run a backup of external databases the container must fulfill some prerequisites. In some cases the prerequisites depend on the cpu architecture your Docker container is running on. To find out which architecture your ioBroker Docker container is running on take a look at the container log on startup. You will find something like this: 
+
+```
+--------------------------------------------------------------------------------
+-----                          System Information                          -----
+-----                    arch:                x86_64                       -----
+-----                    hostname:            iobroker                     -----
+```
+
+### Redis
+
+::: warning Note
+Restoring a remote redis database from iobroker.backitup ui is not supported! You have to restore the backup manually. For details see [iobroker.backitup docs](https://github.com/simatec/ioBroker.backitup/wiki/ioBroker.backitup-Wiki-English#redis-backup). 
+:::
+
+#### x86_64
+- add `redis-tools`to PACKAGES environment variable
+
+
+
+#### aarch64
+
+Sorry, no information available/ not tested yet!
+
+#### armv7l
+
+Sorry, no information available/ not tested yet!
+
+### InfluxDB
+
+#### x86_64
+
+Sorry, no information available/ not tested yet!
+
+#### aarch64
+
+Sorry, no information available/ not tested yet!
+
+#### armv7l
+
+Sorry, no information available/ not tested yet!
+
+### MySQL
+
+#### x86_64
+- add `default-mysql-client`to PACKAGES environment variable
+
+#### aarch64
+
+Sorry, no information available/ not tested yet!
+
+#### armv7l
+
+Sorry, no information available/ not tested yet!
+
+### Postgres SQL
+
+#### x86_64
+
+Sorry, no information available/ not tested yet!
+
+#### aarch64
+
+Sorry, no information available/ not tested yet!
+
+#### armv7l
+
+Sorry, no information available/ not tested yet!
+
+## Enable options in iobroker.backitup
+
+:exclamation: ONLY AVAILABLE IN BETA :exclamation:
+
+To enable the greyed out checkboxes in iobroker.backitup settings you simply have to configure the environment variable `IOB_BACKITUP_EXTDB`and set it to `true`. For more information see [Environment variables (ENV)](/iobroker-docker-image/docs/#environment-variables-env).
+<p>&nbsp</p>
+
+---
+
+#### :warning: Work In Progress :warning:
+
+This documentation is still work in progress. If you got any improvements simply let me know by opening an [issue](https://github.com/buanet/docs/issues) or [edit it](https://github.com/buanet/docs/blob/main/docs/projects/iobroker-docker-image/docs_backitup.md) by yourself and create a pull request.
+
+If you got any unanswered questions please join the ioBroker community on Discord, Telegram, Facebook or [ioBroker Forum](https://forum.iobroker.net).

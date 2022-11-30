@@ -44,4 +44,3 @@ head:
 </span>
 
 # Welcome
-

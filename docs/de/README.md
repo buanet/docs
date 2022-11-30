@@ -43,5 +43,6 @@ head:
 # Willkommen
 
 ::: tip Hinweis
-Die Standardsprache meiner Dokumentation ist Englisch. Derzeit existiert leider noch keine Übersetzung.
+Die Standardsprache dieser Website ist Englisch.<br/>
+Es kann also vorkommen, dass die Übersetzung an einigen Stellen noch unvollständig ist. 
 :::
