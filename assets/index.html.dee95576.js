@@ -1,0 +1,3 @@
+import{_ as t,o as n,c as a,e as o,b as e,d as i}from"./app.0e64c253.js";const r={},s=e("h1",{id:"ssl-and-authentication-for-iobroker-admin",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#ssl-and-authentication-for-iobroker-admin","aria-hidden":"true"},"#"),i(" SSL and authentication for ioBroker admin")],-1),c=e("p",null,"Sorry, this article is not yet translated!",-1);function d(l,h){return n(),a("div",null,[o(`-
+When using comments plugin on this site, the permalink tag length can be max 27 (location.href max 50) 
+`),s,c])}const _=t(r,[["render",d],["__file","index.html.vue"]]);export{_ as default};
