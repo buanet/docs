@@ -26,38 +26,21 @@ module.exports = {
           },
           {
             text: 'Projects',
-            children: [
-            {
-              text: 'Docker Images',
-              children: ['/projects/iobroker-docker-image/readme.md'/*, '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'*/],
-            },
-            {
-              text: 'Raspberry OS Images',
-              children: ['/projects/iobroker-raspberrypios-image/readme.md'/*, '/projects/docker-raspberrypios/readme.md'*/],
-            },
-            //              {
-            //                text: 'Other',
-            //                children: ['/projects/php-contact-form/readme.md'],
-            //              },
-            ],
+            children: ['/projects/iobroker-docker-image/readme.md', '/projects/iobroker-raspberrypios-image/readme.md'],
+//            {
+//              text: 'Docker Images',
+//              children: ['/projects/iobroker-docker-image/readme.md'/*, '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'*/],
+//            },
+//            {
+//              text: 'Raspberry OS Images',
+//              children: ['/projects/iobroker-raspberrypios-image/readme.md'/*, '/projects/docker-raspberrypios/readme.md'*/],
+//            },
+//            ],
         },
         {
           text: 'Docs',
           children: ['/projects/iobroker-docker-image/docs.md', '/projects/iobroker-raspberrypios-image/docs.md'],
         },
-        //          {
-        //            text: 'Tutorials',
-        //            children: [
-        //{
-        //  text: 'Docker',
-        //  children: ['/projects/iobroker-docker-image/readme.md', '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'],
-        //},
-        //              {
-        //                text: 'ioBroker',
-        //                children: ['/tutorials/iobroker/20210114.md'],
-        //              },
-        //            ],
-        //          },
       ],
     },
     '/de/': {
@@ -71,44 +54,21 @@ module.exports = {
         },
         {
           text: 'Projekte',
-          children: [
-            {
-              text: 'Docker Images',
-              children: ['/de/projects/iobroker-docker-image/readme.md'],
-            },
-            {
-              text: 'Raspberry OS Images',
-              children: ['/de/projects/iobroker-raspberrypios-image/readme.md'/*, '/de/projects/docker-raspberrypios/readme.md'*/],
-            },
-          ],
+          children: ['/de/projects/iobroker-docker-image/readme.md', '/de/projects/iobroker-raspberrypios-image/readme.md'],
+//            {
+//              text: 'Docker Images',
+//              children: ['/de/projects/iobroker-docker-image/readme.md'],
+//            },
+//            {
+//              text: 'Raspberry OS Images',
+//              children: ['/de/projects/iobroker-raspberrypios-image/readme.md'/*, '/de/projects/docker-raspberrypios/readme.md'*/],
+//            },
+//          ],
         },
         {
           text: 'Doku',
           children: ['/de/projects/iobroker-docker-image/docs.md', '/de/projects/iobroker-raspberrypios-image/docs.md'],
         },
-        //          {
-        //            text: 'Tutorials',
-        //            children: [
-        //{
-        //  text: 'Docker',
-        //  children: ['/projects/iobroker-docker-image/readme.md', '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'],
-        //},
-        //              {
-        //                text: 'ioBroker',
-        //                children: ['/de/tutorials/iobroker/20210114.md'],
-        //              },
-        //            ],
-        //          },
-        // NavbarGroup
-        //{
-        //  text: 'Tutorials',
-        //  children: [
-        //    {
-        //      text: 'ioBroker',
-        //      link: '/de/tutorials/#iobroker'
-        //    },
-        //  ],
-        // },
       ],
     },
   },
