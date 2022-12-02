@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-7a754bcd","path":"/projects/php-contact-form/","title":"Simple PHP contact form","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1669841383000},"filePathRelative":"projects/php-contact-form/readme.md"}');export{t as data};
