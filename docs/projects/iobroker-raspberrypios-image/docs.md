@@ -52,9 +52,13 @@ And last but not least you need the latest ioBroker Raspberry Pi OS Image zip fi
 
 ### Flash the image 
 
-I really think there is no need to write down another full step by step guide on how to flash a Raspberry Pi os image to an sd card using the [officical Raspberry Pi Imager](https://www.raspberrypi.com/software/). Let me instead just simply link this [short Youtube video](https://www.youtube.com/watch?v=ntaXWS8Lk34) by [@raspberrypi](https://www.youtube.com/@raspberrypi). I hope thats enough input about how to flash the image.
+I really think there is no need to write down another full step by step guide on how to flash a Raspberry Pi os image to an sd card using the [officical Raspberry Pi Imager](https://www.raspberrypi.com/software/). Let me instead just simply link this [short Youtube video](https://www.youtube.com/watch?v=ntaXWS8Lk34) by [@raspberrypi](https://www.youtube.com/@raspberrypi).<br>I hope thats enough input about how to flash the image.
 
-But let me give you some additional hints to maybe make flashing ioBroker Raspberry OS image easier.
+::: warning
+There have been some security changes to the Raspberry Pi OS itself. So it is no longer possible to login with the user pi over SSH by default. To get this running simply use the [advanced settings](#use-advance-settings) in Raspberry Pi Imager and set your own user and password. Otherwise you will need to logon on the console by using a display and keyboard and create your user according to [this guide](https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/) . 
+:::
+
+The following will give you some additional hints to maybe make flashing ioBroker Raspberry OS image a litte bit easier.
 
 #### Use ioBroker Raspberry OS image repo
 
