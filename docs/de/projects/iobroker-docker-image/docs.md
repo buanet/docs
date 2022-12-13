@@ -36,6 +36,10 @@ Dies ist die offizielle Dokumentation für mein ioBroker-Docker-Image. Sie enth�
 
 Wenn du Fragen zur Konfiguration deines ioBroker und seiner Adapter hast, lies bitte die [offizielle ioBroker Dokumentation](https://www.iobroker.net/#de/documentation).
 
+::: warning Hinweis
+Die Dokumentation zum ioBroker Docker Image wird grundsätzlich in Englisch geführt. Es kann daher vorkommen, dass die Übersetzung nicht immer auf dem aktuellsten Stand ist. Das Original der Dokumentation findest du [hier](/iobroker-docker-image/docs/)
+:::
+
 ## Einstieg
 
 Ein ausführliches Tutorial (basierend auf v3.0.0) findest du hier: [https://smarthome.buanet.de](https://smarthome.buanet.de/2019/05/iobroker-unter-docker-auf-der-synology-diskstation-v3/).
@@ -86,6 +90,10 @@ Es ist immer eine gute Wahl, die Verwendung des "latest" Tags für deine  Produk
 ## Persistente Daten
 
 Es wird dringend empfohlen beim ersten Start deines ioBroker Containers einen (leeren) Ordner oder ein Docker Volume unter `/opt/iobroker` zu mounten. Der Container lagert dann alle Daten deiner ioBroker Instanz in dieses Verzeichnis aus. So ist es später möglich den Container zu aktualisieren/ neu zu erstellen ohne die ioBroker Konfiguration zu verlieren. 
+
+::: warning Anmerkung
+Wenn du einen externen Speicher oder eine Dateifreigabe als ioBroker-Verzeichnis in den Container durchreichst, stelle sicher, dass der Speicher OHNE "noexec" Parameter eingebunden wurde. Andernfalls kannst du Probleme bei der Ausführung des ioBroker innerhalb des Containers bekommen. Für weitere Informationen wirf einen Blick in die zugehörigen [Github Issues](https://github.com/buanet/ioBroker.docker/issues?q=is%3Aissue+noexec).
+:::
 
 ## Umgebungsvariablen (ENV)
 

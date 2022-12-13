@@ -88,12 +88,12 @@ It is always a good choice to avoid using the "latest" tag for production. For m
 It is absolutely recommended to mount an (empty) folder or Docker volume to `/opt/iobroker` during first startup of your container. The startup script will check this folder and install ioBroker if it is empty. After ioBroker is installed/ started successfully this folder will contain your whole ioBroker setup. So if your container crashes or you simply have to do some changes to it you can just deploy a new one and mount the folder/ volume again without loosing your ioBroker config. 
 
 ::: warning NOTE
-If you use a shared storage oder external devices mounted to your Docker host to store the iobroker folder make sure the mount point on your host does NOT have the "noexec" flag activated. Otherwise you will get problems executing ioBroker inside the container! For mor details please take a look at the corresponding [Github issues](https://github.com/buanet/ioBroker.docker/issues?q=is%3Aissue+noexec)
+If you use a shared storage oder external devices mounted to your Docker host to store the iobroker folder make sure the mount point on your host does NOT have the "noexec" flag activated. Otherwise you will get problems executing ioBroker inside the container! For mor details please take a look at the corresponding [Github issues](https://github.com/buanet/ioBroker.docker/issues?q=is%3Aissue+noexec).
 :::
 
 ## Environment variables (ENV)
 
-To configure your ioBroker container as you need it, it is possible to set some environment variables.
+To configure your ioBroker container as you need it, it is possible to set some ENVironment variables.
 Please only set the variables where you need to change the default value. Variables you do not set and are marked as "Set by default = yes" will be automatically set using their default values when your run a new container. 
 
 |ENV|Set by<br>default|Default<br>Value|Description|
@@ -101,7 +101,7 @@ Please only set the variables where you need to change the default value. Variab
 |AVAHI|no|false|Installs and activates avahi-daemon for supporting yahka-adapter, can be "true" or "false"|
 |DEBUG|no|false|Activates extended log output for your container, can be "true" or "false"|
 |IOB_ADMINPORT|no|8081|Sets ioBroker adminport on startup|
-|IOB_BACKITUP_EXTDB|no|false|:exclamation: ONLY AVAILABLE IN BETA :exclamation:<br>Activates backing up external databases in ioBroker backitup adapter, can be "true" or "false" (!!! Make sure your have read [this](#backup) !!!)|
+|IOB_BACKITUP_EXTDB|no|false|Activates backing up external databases in ioBroker backitup adapter, can be "true" or "false" (!!! Make sure your have read [this](#backup) !!!)|
 |IOB_MULTIHOST|no|none|Sets ioBroker instance as "master" or "slave" for multihost support|
 |IOB_OBJECTSDB_HOST|no|127.0.0.1|Sets host for ioBroker objects db|
 |IOB_OBJECTSDB_PORT|no|9001|Sets port for ioBroker objects db|
@@ -113,7 +113,7 @@ Please only set the variables where you need to change the default value. Variab
 |LANGUAGE|yes|de_DE:de|The following locales are pre-generated: de_DE:de, en_US:en|
 |LC_ALL|yes|de_DE.UTF-8|The following locales are pre-generated: de_DE.UTF-8, en_US.UTF-8|
 |PACKAGES|no|none|Installs additional linux packages to your container, packages should be seperated by whitespace like this: "package1 package2 package3"|
-|PERMISSION_CHECK|no|true|:exclamation: ONLY AVAILABLE IN BETA :exclamation:<br>Checks and corrects all relevant permissions on container startup, can be "true" or "false" (!!! Use at your own risk !!!)|
+|PERMISSION_CHECK|no|true|Checks and corrects all relevant permissions on container startup, can be "true" or "false" (!!! Use at your own risk !!!)|
 |SETGID|yes|1000|For some reasons it might be useful to specify the gid of the containers iobroker user to match an existing group on the docker host|
 |SETUID|yes|1000|For some reasons it might be useful to specify the uid of the containers iobroker user to match an existing user on the docker host|
 |TZ|yes|Europe/Berlin|Sets the containers timezone, all valid Linux-timezones are possible|
@@ -134,7 +134,11 @@ For more information about networking with Docker please refer to the [official 
 
 ### Mounting USB devices
 
-If you want to use a USB device within ioBroker inside your container don´t forget to [mount the device](https://docs.docker.com/engine/reference/commandline/run/#add-host-device-to-container---device) on container startup and use the ENV "USBDEVICES" to give ioBroker access to it.
+If you want to use an USB device within ioBroker inside your container don´t forget to [mount the device](https://docs.docker.com/engine/reference/commandline/run/#add-host-device-to-container---device) on container startup AND use the [ENV "USBDEVICES"](#environment-variables-env) to give ioBroker access to it.
+
+::: warning Note
+This is an AND condition. You have to do both. Just setting the ENV "USBDEVICES" will not work.
+:::
 
 ### Startup scripts
 
