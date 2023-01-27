@@ -87,7 +87,7 @@ It is always a good choice to avoid using the "latest" tag for production. For m
 
 It is absolutely recommended to mount an (empty) folder or Docker volume to `/opt/iobroker` during first startup of your container. The startup script will check this folder and install ioBroker if it is empty. After ioBroker is installed/ started successfully this folder will contain your whole ioBroker setup. So if your container crashes or you simply have to do some changes to it you can just deploy a new one and mount the folder/ volume again without loosing your ioBroker config. 
 
-::: warning NOTE
+::: warning Note
 If you use a shared storage oder external devices mounted to your Docker host to store the iobroker folder make sure the mount point on your host does NOT have the "noexec" flag activated. Otherwise you will get problems executing ioBroker inside the container! For mor details please take a look at the corresponding [Github issues](https://github.com/buanet/ioBroker.docker/issues?q=is%3Aissue+noexec).
 :::
 

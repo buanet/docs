@@ -114,8 +114,6 @@ Sorry, no information available/ not tested yet!
 
 ## Enable options in iobroker.backitup
 
-:exclamation: ONLY AVAILABLE IN BETA :exclamation:
-
 To enable the greyed out checkboxes in iobroker.backitup settings you simply have to configure the environment variable `IOB_BACKITUP_EXTDB`and set it to `true`. For more information see [Environment variables (ENV)](/iobroker-docker-image/docs/#environment-variables-env).
 <p>&nbsp</p>
 
