@@ -269,7 +269,7 @@ Simply type `maintenance --help` at the containers command line to see what the 
 
 ### Migrating to Redis
 
-If you want to migrate an existing ioBroker installation to Redis as objects and/ or states db, it is recommended to do the migration first from inside the container before setting the needed [ENVs](#environment-variables-env) to the container. This could be done by running `iobroker setup costom` at the containers command line. The wizard will guide you through the process and also asks for the migration of existing objects and/ or states. For more details on how to configure ioBroker to connect to Redis, please refer to the [Official ioBroker Docs](https://www.iobroker.net/#en/documentation).
+If you want to migrate an existing ioBroker installation to Redis as objects and/ or states db, it is recommended to do the migration first from inside the container before setting the needed [ENVs](#environment-variables-env) to the container. This could be done by running `iobroker setup custom` at the containers command line. The wizard will guide you through the process and also asks for the migration of existing objects and/ or states. For more details on how to configure ioBroker to connect to Redis, please refer to the [Official ioBroker Docs](https://www.iobroker.net/#en/documentation).
 
 ::: warning NOTE
 For running `iob setup custom` ioBroker has to be stopped inside the container. It is recommended to use the  [maintenance script](#use-maintenance-script) to set the container in maintenance mode and stop iobroker gracefully.
