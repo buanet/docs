@@ -25,7 +25,7 @@ I am a family dad and smarthome owner and work as a IT specialist at a german IT
 
 To get away from computer screens and all the nerdy IT stuff I like to spend my time with my family and friends doing some outdoor activities like hiking, biking and Geocaching. 
 
-### Where you can find me
+### Contact
 
 <a href="https://github.com/buanet" target="_blank"><img src='/images/profile/github.png' alt="Github Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://discordapp.com/users/591003148542279690" target="_blank"><img src='/images/profile/discord.png' alt="Discord Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;

@@ -44,6 +44,11 @@ div.theme-default-content:not(.custom) {
     max-width: 1000px;
 }
 
+// hide external link icon when link on image
+img + span .external-link-icon {
+    display: none;
+}
+
 // resize images by "alt"-tag
 img[alt='ioBroker Logo'] {
     width: 700px;

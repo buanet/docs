@@ -25,7 +25,7 @@ Ich bin Familienvater und Smarthome-Besitzer und arbeite als Fachinformatiker be
 
 Um von Computerbildschirmen und all dem nerdigen IT-Zeug wegzukommen verbringe ich meine Freizeit auch gerne mit meiner Familie und Freunden bei Outdoor-Aktivitäten wie Wandern, Radfahren und Geocaching.
 
-### Wo man mich findet 
+### Kontakt
 
 <a href="https://github.com/buanet" target="_blank"><img src='/images/profile/github.png' alt="Github Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://discordapp.com/users/591003148542279690" target="_blank"><img src='/images/profile/discord.png' alt="Discord Logo" style="width:64px"></a>&nbsp;&nbsp;&nbsp;

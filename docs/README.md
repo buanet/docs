@@ -3,14 +3,14 @@ home: true
 heroText: null
 tagline: null
 title: Welcome
-footer: Copyright © 2022 André Germann
+footer: Copyright © 2022 - 2023 André Germann
 head:
   - - meta
     - name: google-site-verification
       content: "urQrs3sTgMU-USHtWSaU_c_QOsM8oLBRHmhJe5fThhU"
   - - meta
     - name: description
-      content: "Documentation and Tutorials for my Projects around Smarthome with Docker."
+      content: "Information and docs of my projects."
   - - meta
     - name: charset
       content: UTF‑8
@@ -22,7 +22,7 @@ head:
       content: "docs.buanet.de"
   - - meta
     - property: og:description
-      content: "Documentation and Tutorials for my Projects around Smarthome with Docker."
+      content: "Information and docs of my projects."
   - - meta
     - property: og:url
       content: "https://docs.buanet.de"

@@ -7,7 +7,7 @@ footer: Copyright © 2022 André Germann
 head:
   - - meta
     - name: description
-      content: "Dokumentation und Tutorials zu meinen Projekten rund um das Thema Smarthome mit Docker."
+      content: "Alle Informationen und Dokumentationen zu meinen Projekten."
   - - meta
     - name: charset
       content: UTF‑8
@@ -19,7 +19,7 @@ head:
       content: "docs.buanet.de"
   - - meta
     - property: og:description
-      content: "Dokumentation und Tutorials zu meinen Projekten rund um das Thema Smarthome mit Docker."
+      content: "Alle Informationen und Dokumentationen zu meinen Projekten."
   - - meta
     - property: og:url
       content: "https://docs.buanet.de"

@@ -38,7 +38,21 @@ When using comments plugin on this site, the permalink tag length can be max 27 
 
 ![ioBroker Logo](/images/iobroker_logo.png)
 
-![Source](https://img.shields.io/badge/source-github-blue?style=flat) ![Release](https://img.shields.io/github/v/release/buanet/ioBroker.docker?style=flat)  ![Github Issues](https://img.shields.io/github/issues/buanet/ioBroker.docker?style=flat) ![Docker Pulls](https://img.shields.io/docker/pulls/buanet/iobroker?style=flat) ![Docker Stars](https://img.shields.io/docker/stars/buanet/iobroker?style=flat) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buanet/iobroker/latest?style=flat) ![License](https://img.shields.io/github/license/buanet/ioBroker.docker?style=flat)
+[![Release](https://img.shields.io/github/v/release/buanet/ioBroker.docker?style=flat)](https://github.com/buanet/ioBroker.docker/releases)&nbsp;
+[![Pre-Release)](https://img.shields.io/github/v/tag/buanet/ioBroker.docker?include_prereleases&label=pre-release)](https://github.com/buanet/ioBroker.docker/releases)&nbsp;
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/buanet/ioBroker.docker/build-debian-image-latest.yml?branch=main)](https://github.com/buanet/ioBroker.docker/actions/workflows/build-debian-image-latest.yml)&nbsp;
+[![Github Issues](https://img.shields.io/github/issues/buanet/ioBroker.docker?style=flat)](https://github.com/buanet/ioBroker.docker/issues)&nbsp;
+[![Github Pull Requests](https://img.shields.io/github/issues-pr/buanet/ioBroker.docker?style=flat)](https://github.com/buanet/ioBroker.docker/pulls)&nbsp;
+[![GitHub Discussions](https://img.shields.io/github/discussions/buanet/ioBroker.docker)](https://github.com/buanet/ioBroker.docker/discussions)<br>
+[![Arch](https://img.shields.io/badge/arch-amd64%20%7C%20arm32v7%20%7C%20arm64v8-blue)](https://hub.docker.com/repository/docker/buanet/iobroker)&nbsp;
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/buanet/iobroker/latest?style=flat)](https://hub.docker.com/repository/docker/buanet/iobroker)&nbsp;
+[![Docker Pulls](https://img.shields.io/docker/pulls/buanet/iobroker?style=flat)](https://hub.docker.com/repository/docker/buanet/iobroker)&nbsp;
+[![Docker Stars](https://img.shields.io/docker/stars/buanet/iobroker?style=flat)](https://hub.docker.com/repository/docker/buanet/iobroker)<br>
+[![Source](https://img.shields.io/badge/source-github-blue?style=flat)](https://github.com/buanet/ioBroker.docker)&nbsp;
+[![GitHub forks](https://img.shields.io/github/forks/buanet/ioBroker.docker)](https://github.com/buanet/ioBroker.docker/network)&nbsp;
+[![GitHub stars](https://img.shields.io/github/stars/buanet/ioBroker.docker)](https://github.com/buanet/ioBroker.docker/stargazers)&nbsp;
+[![License](https://img.shields.io/github/license/buanet/ioBroker.docker?style=flat)](https://github.com/buanet/ioBroker.docker/blob/master/LICENSE.md)&nbsp;
+[![Donate](https://img.shields.io/badge/donate-paypal-blue?style=flat)](https://paypal.me/buanet)
 
 ## Overview
 
@@ -70,6 +84,7 @@ The very basic information about how to run the ioBroker Docker image can be fou
   * [Mounting USB devices](/projects/iobroker-docker-image/docs.md#mounting-usb-devices)
   * [Startup scripts](/projects/iobroker-docker-image/docs.md#startup-scripts)
   * [Multihost](/projects/iobroker-docker-image/docs.md#multihost)
+  * [Redis](/projects/iobroker-docker-image/docs.md#redis)
 * [Maintenance](/projects/iobroker-docker-image/docs.md#maintenance)
   * [Backup](/projects/iobroker-docker-image/docs.md#backup)
   * [Restore](/projects/iobroker-docker-image/docs.md#restore)
@@ -78,7 +93,7 @@ The very basic information about how to run the ioBroker Docker image can be fou
 * [Best practice](/projects/iobroker-docker-image/docs.md#best-practice)
   * [Avoid using latest tag](/projects/iobroker-docker-image/docs.md#avoid-using-latest-tag)
   * [Use maintenance script](/projects/iobroker-docker-image/docs.md#use-maintenance-script)
-  * [Migrating states to redis](/projects/iobroker-docker-image/docs.md#migrating-states-to-redis)
+  * [Migrating to redis](/projects/iobroker-docker-image/docs.md##migrating-to-redis)
 * [Miscellaneous](/projects/iobroker-docker-image/docs.md#miscellaneous)
   * [Beta testing](/projects/iobroker-docker-image/docs.md#beta-testing)
   * [Notes for developers](/projects/iobroker-docker-image/docs.md#notes-for-developers)
