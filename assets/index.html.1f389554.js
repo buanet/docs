@@ -1,3 +1,0 @@
-import{_ as t,o as r,c as i,e as n,b as e,d as a}from"./app.4e5a90e6.js";const o={},s=e("h1",{id:"iobroker-raspberry-pi-os-image",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#iobroker-raspberry-pi-os-image","aria-hidden":"true"},"#"),a(" ioBroker Raspberry Pi OS Image")],-1),c=e("div",{class:"custom-container tip"},[e("p",{class:"custom-container-title"},"Hinweis"),e("p",null,"Derzeit existiert leider noch keine Übersetzung.")],-1);function l(d,m){return r(),i("div",null,[n(`-
-When using comments plugin on this site, the permalink tag length can be max 27 (location.href max 50) 
-`),s,c])}const _=t(o,[["render",l],["__file","index.html.vue"]]);export{_ as default};
