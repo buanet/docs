@@ -61,8 +61,6 @@ Restoring a remote redis database from iobroker.backitup ui is not supported! Yo
 #### x86_64
 - add `redis-tools`to PACKAGES environment variable
 
-
-
 #### aarch64
 
 Sorry, no information available/ not tested yet!
@@ -73,9 +71,12 @@ Sorry, no information available/ not tested yet!
 
 ### InfluxDB
 
-#### x86_64
+::: warning Note
+Backup/restore for InfluxDB was tested with version 1.8 only. 
+:::
 
-Sorry, no information available/ not tested yet!
+#### x86_64
+- add `influxdb`to PACKAGES environment variable
 
 #### aarch64
 
