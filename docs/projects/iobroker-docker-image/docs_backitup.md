@@ -52,6 +52,10 @@ To run a backup of external databases the container must fulfill some prerequisi
 -----                    hostname:            iobroker                     -----
 ```
 
+<br>
+
+---
+
 ### Redis
 
 ::: warning Note
@@ -59,9 +63,7 @@ Restoring a remote redis database from iobroker.backitup ui is not supported! Yo
 :::
 
 #### x86_64
-- add `redis-tools`to PACKAGES environment variable
-
-
+- add `redis-tools`to PACKAGES environment variable to fulfill prerequisites 
 
 #### aarch64
 
@@ -70,25 +72,34 @@ Sorry, no information available/ not tested yet!
 #### armv7l
 
 Sorry, no information available/ not tested yet!
+
+<br>
+
+---
 
 ### InfluxDB
 
-#### x86_64
+The following is valid for all supported cpu architectures.<br>
+You need to run ioBroker Image Version v8.1.0 or greater.
 
-Sorry, no information available/ not tested yet!
+To fulfill the prerequisites for running an InfluxDB backup/ restore with ioBroker.backitup adapter you need to add the following packages to your containers environment variable `PACKAGES`:
 
-#### aarch64
+...for InfluxDB v1.8 and older add `influxdb`
 
-Sorry, no information available/ not tested yet!
+...for InfluxDB InfluxDB v2 and newer add `influxdb2-cli`
 
-#### armv7l
+::: warning Note
+It is not possible to install both packages together. So it is only possible to backup a InfluxDB v1.8 and older OR an InfluxDB v2 and newer.
+:::
 
-Sorry, no information available/ not tested yet!
+<br>
+
+---
 
 ### MySQL
 
 #### x86_64
-- add `default-mysql-client`to PACKAGES environment variable
+- add `default-mysql-client` to PACKAGES environment variable to fulfill prerequisites 
 
 #### aarch64
 
@@ -97,6 +108,10 @@ Sorry, no information available/ not tested yet!
 #### armv7l
 
 Sorry, no information available/ not tested yet!
+
+<br>
+
+---
 
 ### Postgres SQL
 
