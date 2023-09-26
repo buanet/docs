@@ -42,7 +42,7 @@ Die Dokumentation zum ioBroker Docker Image wird grundsätzlich in Englisch gef�
 
 ## Einstieg
 
-Bei Fragen melde dich einfach im [ioBroker Forum Thread](http://forum.iobroker.net/viewtopic.php?f=17&t=5089) zu Wort oder tritt der ioBroker Community auf [Discord](https://discord.gg/kN7nhx6C) oder [Facebook](https://www.facebook.com/groups/440499112958264) bei.
+Bei Fragen melde dich einfach im [ioBroker Forum Thread](http://forum.iobroker.net/viewtopic.php?f=17&t=5089) zu Wort oder tritt der ioBroker Community auf [Discord](https://discord.gg/5jGWNKnpZ8) oder [Facebook](https://www.facebook.com/groups/440499112958264) bei.
 
 Bitte vermeide es mich bei Support-Fragen direkt zu kontaktieren. Stelle deine Frage stattdessen lieber in der ioBroker Community und markiere mich bei Bedarf. So können alle ioBroker Benutzer von der Antwort profitieren und du erhältst ggf. auch Unterstützung von anderen Mitgliedern aus der Community.
 
@@ -285,7 +285,7 @@ Damit `iob setup custom` funktioniert muss der ioBroker innerhalb des Containers
 
 ### Beta Tester
 
-Falls du stets die neusten Korrekturen und Funktionen des Docker Images nutzen möchtest bist du herzlich dazu eingeladen unsere Beta-Versionen zu verwenden. Für mehr Informationen wirf am Besten einen Blick auf die [Docker image releases](https://github.com/buanet/ioBroker.docker/releases) und/ oder beteilige dich an der Diskussion im [ioBroker Discord Channel > Beta Testing & Feedback > docker-image](https://discord.gg/kN7nhx6C).<br>Vielen Dank. 
+Falls du stets die neusten Korrekturen und Funktionen des Docker Images nutzen möchtest bist du herzlich dazu eingeladen unsere Beta-Versionen zu verwenden. Für mehr Informationen wirf am Besten einen Blick auf die [Docker image releases](https://github.com/buanet/ioBroker.docker/releases) und/ oder beteilige dich an der Diskussion im [ioBroker Discord Channel > Beta Testing & Feedback > docker-image](https://discord.gg/5jGWNKnpZ8).<br>Vielen Dank. 
 
 ### Hinweise für Entwickler
 
@@ -297,4 +297,4 @@ Falls du stets die neusten Korrekturen und Funktionen des Docker Images nutzen m
 
 Diese Dokumentation ist noch in Arbeit. Wenn du Verbesserungsvorschläge hast, lass es mich wissen indem du einen [issue](https://github.com/buanet/docs/issues) meldest oder gleich [selbst editierst](https://github.com/buanet/docs/blob/main/docs/de/projects/iobroker-docker-image/docs.md) und einen pull request erstellst.
 
-Falls noch Fragen unbeantwortet geblieben sind, schaue gerne in der ioBroker Community auf [Discord](https://discord.gg/kN7nhx6C), [Facebook](https://www.facebook.com/groups/440499112958264) oder im [ioBroker Forum](https://forum.iobroker.net) vorbei.
+Falls noch Fragen unbeantwortet geblieben sind, schaue gerne in der ioBroker Community auf [Discord](https://discord.gg/5jGWNKnpZ8), [Facebook](https://www.facebook.com/groups/440499112958264) oder im [ioBroker Forum](https://forum.iobroker.net) vorbei.

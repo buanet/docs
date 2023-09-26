@@ -38,7 +38,7 @@ If you got questions on how to configure your ioBroker and its adapters please r
 
 ## Getting Started
 
-For discussion and support please visit [ioBroker forum thread](http://forum.iobroker.net/viewtopic.php?f=17&t=5089) or join the ioBroker Community on [Discord](https://discord.gg/kN7nhx6C), or [Facebook](https://www.facebook.com/groups/440499112958264).
+For discussion and support please visit [ioBroker forum thread](http://forum.iobroker.net/viewtopic.php?f=17&t=5089) or join the ioBroker Community on [Discord](https://discord.gg/5jGWNKnpZ8), or [Facebook](https://www.facebook.com/groups/440499112958264).
 
 Please do not contact me directly for any support-reasons. Every support question should be answered in a public place so all users can benefit from it . Thanks in advance.
 
@@ -279,7 +279,7 @@ For running `iob setup custom` ioBroker has to be stopped inside the container. 
 
 ### Beta testing
 
-If you want to get the newest features and fixes feel free to use/ test the beta version of the Docker image. For more information take a look at the [Docker image releases](https://github.com/buanet/ioBroker.docker/releases) and/ or join our discussion on [ioBroker Discord > Beta Testing & Feedback > docker-image](https://discord.gg/kN7nhx6C).<br>Thank you. 
+If you want to get the newest features and fixes feel free to use/ test the beta version of the Docker image. For more information take a look at the [Docker image releases](https://github.com/buanet/ioBroker.docker/releases) and/ or join our discussion on [ioBroker Discord > Beta Testing & Feedback > docker-image](https://discord.gg/5jGWNKnpZ8).<br>Thank you. 
 
 
 ### Notes for developers
@@ -294,4 +294,4 @@ For adapter developers it is now possible to easily detect if ioBroker is runnin
 
 This documentation is still work in progress. If you got any improvements simply let me know by opening an [issue](https://github.com/buanet/docs/issues) or [edit it](https://github.com/buanet/docs/blob/main/docs/projects/iobroker-docker-image/docs.md) by yourself and create a pull request.
 
-If you got any unanswered questions please join the ioBroker community on [Discord](https://discord.gg/kN7nhx6C), [Facebook](https://www.facebook.com/groups/440499112958264) or [ioBroker Forum](https://forum.iobroker.net).
+If you got any unanswered questions please join the ioBroker community on [Discord](https://discord.gg/5jGWNKnpZ8), [Facebook](https://www.facebook.com/groups/440499112958264) or [ioBroker Forum](https://forum.iobroker.net).
