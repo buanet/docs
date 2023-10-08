@@ -100,9 +100,9 @@ Um deinen ioBroker-Container entsprechend deiner Anforderungen zu konfigurieren,
 |Umgebungsvariable (ENV)|Im Standard gesetzt|Standardwert|Beschreibung|
 |---|---|---|---|
 |AVAHI|nein|false|Aktiviert den Avahi-Dienst, welcher z.B. vom yahka Adapter verwendet wird, kann "true" oder "false" sein.|
-|DEBUG|nein|false|Aktiviert die erweiterte Logausgabe für den container, kann `true`oder `false` sein. (!!! Bitte nur setzen wenn wirklich benötigt !!!)|
+|DEBUG|nein|false|Aktiviert die erweiterte Log-Ausgabe für den container, kann `true`oder `false` sein. (!!! Bitte nur setzen wenn wirklich benötigt !!!)|
 |IOB_ADMINPORT|nein|8081|Setzt den Port des ioBroker Admin, muss eine Zahl sein|
-|IOB_BACKITUP_EXTDB|nein|false|Aktiviert die Backupmöglichkeit von externen Datenbanken im ioBroker backitup Adapter, kann `true`oder `false` sein. (!!! Bitte stelle sicher, dass du [dies](#backup) gelesen hast !!!)|
+|IOB_BACKITUP_EXTDB|nein|false|Aktiviert die Backup-Möglichkeit von externen Datenbanken im ioBroker backitup Adapter, kann `true`oder `false` sein. (!!! Bitte stelle sicher, dass du [dies](#backup) gelesen hast !!!)|
 |IOB_MULTIHOST|nein|[not set]|Setzt den ioBroker als `master` oder `slave` für Multihost Unterstützung|
 |IOB_OBJECTSDB_TYPE|nein|jsonl|Setzt den Typ der ioBroker Objects DB, kann `jsonl`, `file`(veraltet) oder `redis` sein|
 |IOB_OBJECTSDB_HOST|nein|127.0.0.1|Setzt den/ die Host(s) für die ioBroker Objects DB, kann im Fall von Redis Sentinel eine Komma getrennte Liste sein|
@@ -117,7 +117,7 @@ Um deinen ioBroker-Container entsprechend deiner Anforderungen zu konfigurieren,
 |LANG|ja|de_DE.UTF&#x2011;8|Die folgenden locales sind vorgeneriert: de_DE.UTF-8, en_US.UTF-8|
 |LANGUAGE|ja|de_DE:de|Die folgenden locales sind vorgeneriert: de_DE:de, en_US:en|
 |LC_ALL|ja|de_DE.UTF-8|Die folgenden locales sind vorgeneriert: de_DE.UTF-8, en_US.UTF-8|
-|OFFLINE_MODE|nein|false| Setze dies aud `true` wenn dein ioBroker keine oder nur eingeschränkte Verbindung zum Internent hat. (!!! Verwendung auf eigene Gefahr !!!)|
+|OFFLINE_MODE|nein|false| Setze dies aud `true` wenn dein ioBroker keine oder nur eingeschränkte Verbindung zum Internet hat. (!!! Verwendung auf eigene Gefahr !!!)|
 |PACKAGES|nein|[not set]|Installiert zusätzliche Linux Pakete. Pakete sollten durch Leerzeichen getrennt sein. Beispiel: "Paket1 Paket2 Paket3".|
 |PERMISSION_CHECK|nein|true|Prüft alle nötigen Berechtigungen beim Start des Containers, kann `true` oder `false` sein (!!! Verwendung auf eigene Gefahr !!!)|
 |SETGID|ja|1000|In manchen Fällen ist es notwendig die GID des ioBroker Benutzers im Container anzupassen, damit diese zu einer entsprechenden Gruppe auf dem Host System passt.|
@@ -129,7 +129,7 @@ Um deinen ioBroker-Container entsprechend deiner Anforderungen zu konfigurieren,
 
 Die oben genannten Beispiele besitzen keine spezielle Netzwerkkonfiguration. In einem solchen Fall greift Docker auf das standard Bridge-Netzwerk zurück. Grundsätzlich gibt es allerdings [ein paar Gründe](https://docs.docker.com/network/bridge/#differences-between-user-defined-bridges-and-the-default-bridge) weshalb es sinnvoll sein könnte, ein benutzerdefiniertes Bridge-Netzwerk zu verwenden.
 
-Iobroker in einem Bridge-Netzwerk zu betreiben funktioniert grundsätzlich gut (sofern man die vom Adapter benötigten Ports entsprechend durch reicht) für die meisten ioBroker Adapter, und ist die perfekte Option um einen ersten Blick auf ioBroker zu werfen. Allerdings gibt es Adapter die Techniken wie [Multicast](https://en.wikipedia.org/wiki/Multicast) oder [Braoadcast](https://en.wikipedia.org/wiki/Broadcasting_(networking)), z.B. zur automatischen Erkennung von IoT-Geräten im Netzwerk, verwenden. In diesem Fall ist es notwendig sich mit dem Netzwerkmodus [host](https://docs.docker.com/network/host/) oder dem [MACVLAN](https://docs.docker.com/network/macvlan/) auseinander zu setzen. 
+Iobroker in einem Bridge-Netzwerk zu betreiben funktioniert grundsätzlich gut (sofern man die vom Adapter benötigten Ports entsprechend durch reicht) für die meisten ioBroker Adapter, und ist die perfekte Option um einen ersten Blick auf ioBroker zu werfen. Allerdings gibt es Adapter die Techniken wie [Multicast](https://en.wikipedia.org/wiki/Multicast) oder [Broadcast](https://en.wikipedia.org/wiki/Broadcasting_(networking)), z.B. zur automatischen Erkennung von IoT-Geräten im Netzwerk, verwenden. In diesem Fall ist es notwendig sich mit dem Netzwerkmodus [host](https://docs.docker.com/network/host/) oder dem [MACVLAN](https://docs.docker.com/network/macvlan/) auseinander zu setzen. 
 
 Weitere Informationen zu Netzwerk unter Docker findest du in der [Offiziellen Docker Dokumentation](https://docs.docker.com/network/). 
 
@@ -145,7 +145,7 @@ Dies ist eine UND Bedingung. Für eine ordnungsgemäße Funktion müssen beide P
 
 ### Startskripte
 
-Mit Hilfe der Startskripte (userscripts) ist es möglich beim Start des ioBroker Containers eigene Skripte ausführen zu lassen. Aktiviert wird das Feature indem man, analog zum ioBroker Ordner, einen weiteren Ordner (oder ein Volume) unter `/opt/userscripts` mountet.
+Mit Hilfe der Startskripte (user scripts) ist es möglich beim Start des ioBroker Containers eigene Skripte ausführen zu lassen. Aktiviert wird das Feature indem man, analog zum ioBroker Ordner, einen weiteren Ordner (oder ein Volume) unter `/opt/userscripts` mountet.
 
 Nach dem Start befinden sich dann zwei Beispielscripte im Ordner. Zur Aktivierung der Scripte muss lediglich die Endung `_example` im Namen des Scripts entfernt werden. Das Script `userscript_firststart.sh` wird nur beim allerersten Start eines neuen Containers ausgeführt, das Script `userscript_everystart.sh` bei jedem Containerstart.
 
@@ -153,7 +153,7 @@ Probiere es einfach aus. In den Scripten ist Beispielcode enthalten der eine Aus
 
 ### Multihost
 
-Mit Hilfe der Umgebungsvariablen `IOB_MULTIHOST` und den Umgebungsvariablen für Objects und States DB Verbindungen lässt sich der ioBroker Container als Multihost Master oder Slave betreiben. Diese Funktion richtet sich mehr oder weniger an erfahrene Benutzer. Bitte stelle vor der Konfiguration der Umgebungsvariablen sicher, dass du mit dem Multihost-Feature von ioBroker vertraut bist und weißt was der Befehl  `ìobroker setup custom` tut. 
+Mit Hilfe der Umgebungsvariablen `IOB_MULTIHOST` und den Umgebungsvariablen für Objects und States DB Verbindungen lässt sich der ioBroker Container als Multihost Master oder Slave betreiben. Diese Funktion richtet sich mehr oder weniger an erfahrene Benutzer. Bitte stelle vor der Konfiguration der Umgebungsvariablen sicher, dass du mit dem Multihost-Feature von ioBroker vertraut bist und weißt was der Befehl  `iobroker setup custom` tut. 
 
 Bei der Verwendung der Umgebungsvariablen für den Multihost Betrieb ist keine Ausführung von  `iobroker multihost enable` oder `iobroker multihost connect` innerhalb des Containers notwendig. Bei korrekter Konfiguration wird all dies durch das Startscript des Containers erledigt.   
 
@@ -161,7 +161,7 @@ Allgemeine Informationen zur Multihost-Funktion von ioBroker findest du in der [
 
 ### Redis
 
-Mit v8.0.0 des ioBroker Docker Images wurde die Integration von Redis als Object und/ oder States DB komplett überarbeitet und erweitert. Grundsätzlich basiert die Konfiguration öediglich auf den Umgebungsvariablen für DB `TYPE`, `HOST` und `PORT`. Mit der Unterstüzung von Authentifizierung und Redis Sentinel sind jetzt allerdings noch weitere Features verfügbar wie etwa [Authentifizierung](#authentifizierung) oder die Unterstützung für [Redis Sentinel Cluster](#redis-sentinel-cluster).
+Mit v8.0.0 des ioBroker Docker Images wurde die Integration von Redis als Object und/ oder States DB komplett überarbeitet und erweitert. Grundsätzlich basiert die Konfiguration lediglich auf den Umgebungsvariablen für DB `TYPE`, `HOST` und `PORT`. Mit der Unterstützung von Authentifizierung und Redis Sentinel sind jetzt allerdings noch weitere Features verfügbar wie etwa [Authentifizierung](#authentifizierung) oder die Unterstützung für [Redis Sentinel Cluster](#redis-sentinel-cluster).
 
 Für einige grundlegende Informationen zum Thema Redis und ioBroker lies bitte unbedingt diesen [ioBroker Forum Post von Apollon77](https://forum.iobroker.net/topic/26327/redis-in-iobroker-%C3%BCberblick). 
 
@@ -215,7 +215,7 @@ Mit mindestens ioBroker Docker Image v8.1.0, js-controller v5.0.10 und admin v6.
 
 Natürlich kannst du immer noch das js-controller-Upgrade über die Befehlszeile durchführen.
 
-**Ohne die Hilfe des [Maintenance-Scripts](#use-maintenance-script), auch bekannt als "der hackige Weg"**
+**Ohne die Hilfe des [Maintenance-Scripts](#use-maintenance-script), auch bekannt als "der hacky Weg"**
 ```sh
 pkill -u iobroker
 iobroker update
@@ -248,18 +248,18 @@ Falls du mögliche Upgrade-Probleme von vornherein vermeiden oder mit einem saub
 
 1. Erstellen eines neuen Backups
 2. Erstellen eines neuen, leeren Verzeichnisses für die ioBroker Daten auf dem Host
-3. Kopieren des letzten Backupfiles in das neue Verzeichnis
+3. Kopieren der letzten Backup-Datei in das neue Verzeichnis
 4. Stoppen und Löschen des alten Containers
 5. Erstellen eines neuen Containers aus dem aktuellsten Image mit der selben Konfiguration wie zuvor, aber mit dem neuen Verzeichnis als ioBroker Datenverzeichnis
 6. Beobachten des Container Logs beim Start des neuen Containers bis ioBroker gestartet wurde
 7. Wiederherstellen des Backups über die Kommandozeile oder den ioBroker.backitup Adapter
 8. Überprüfen der Installation der Adapter nach erfolgreicher Wiederherstellung
 
-### Docker Healthcheck
+### Docker Health Check
 
-Seit v5.1.0 enthält das ioBroker Docker Image einen Docker Healthcheck (Gesundheitscheck). Dieser prüft ob im Container der js-controller läuft und meldet dem Docker Dienst entsprechend "healthy" (gesund) or "unhealthy" (nicht gesund) zurück. 
+Seit v5.1.0 enthält das ioBroker Docker Image einen Docker Health Check (Gesundheitscheck). Dieser prüft ob im Container der js-controller läuft und meldet dem Docker Dienst entsprechend "healthy" (gesund) or "unhealthy" (nicht gesund) zurück. 
 
-Der Healthcheck macht bei seinem Test bis zu 5 Versuche in einem Interval von 15s mit einem Timeout von 5s. Dementsprechend würde der Container frühestens 60 Sekunden nachdem der js-controller beendet ist den Status "unhealthy" einnehmen.
+Der Health Check macht bei seinem Test bis zu 5 Versuche in einem Interval von 15s mit einem Timeout von 5s. Dementsprechend würde der Container frühestens 60 Sekunden nachdem der js-controller beendet ist den Status "unhealthy" einnehmen.
 
 ::: tip Pro Tip
 Da Docker selbst keine Aktionen aufgrund des healthy/ unhealthy Status eines Containers erlaubt, braucht es für eine Aktion (z.B. Neustart) einen Watchdog. Für genau diesen Zweck habe ich das folgende Projekt gestartet: [Watchdog for Docker](https://github.com/buanet/docker-watchdog).
@@ -278,7 +278,7 @@ Damit dies nicht geschieht ist es in einer Produktivumgebung sinnvoll einen Vers
 Das ioBroker Docker-Image enthält ein kleines Wartungsskript, das dir bei der Verwaltung deines ioBroker Docker-Containers hilft. Du kannst dieses Skript beispielsweise verwenden, um deinen Container in den Wartungsmodus zu versetzen (ioBroker wird gestoppt, aber der Container bleibt gesund) und js-controller-Updates anzuwenden. 
 Gib einfach `maintenance --help` an der Befehlszeile des Containers ein, um zu sehen, was das Skript für dich tun kann.
 
-Mit Docker-Image v9.0.0 wurden einige Sicherheitsänderungen am Wartungsskript vorgenommen. Es ist jetzt nicht mehr möglich, das Skript als Benutzer `root` aufzurufen. Da die Verwendung von root auf der Befehlszeile von Containern sehr geläufig ist, wurde diesed Problem behoben, indem der Befehl `maintenance` in den `iobroker`-Befehl aufgenommen wurde. Zum Beispiel so:
+Mit Docker-Image v9.0.0 wurden einige Sicherheitsänderungen am Wartungsskript vorgenommen. Es ist jetzt nicht mehr möglich, das Skript als Benutzer `root` aufzurufen. Da die Verwendung von root auf der Befehlszeile von Containern sehr geläufig ist, wurde dieses Problem behoben, indem der Befehl `maintenance` in den `iobroker`-Befehl aufgenommen wurde. Zum Beispiel so:
 
 ```sh
 iobroker maintenance on
