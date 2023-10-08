@@ -38,17 +38,17 @@ If you got questions on how to configure your ioBroker and its adapters please r
 
 ## Getting Started
 
-For discussion and support please visit [ioBroker forum thread](http://forum.iobroker.net/viewtopic.php?f=17&t=5089) or join the ioBroker Community on [Discord](https://discord.gg/5jGWNKnpZ8), or [Facebook](https://www.facebook.com/groups/440499112958264).
+For discussion and support please visit [ioBroker Docker Image Discussions](https://github.com/buanet/ioBroker.docker/discussions) or join the community on [ioBroker Forum](https://forum.iobroker.net), [Discord](https://discord.gg/5jGWNKnpZ8) or [Facebook](https://www.facebook.com/groups/440499112958264).
 
-Please do not contact me directly for any support-reasons. Every support question should be answered in a public place so all users can benefit from it . Thanks in advance.
+Please do not contact me directly for any support reasons. Every support question should be answered in a public place so all users can benefit from it . Thanks in advance.
 
 If you think you found a bug or simply want to request a new feature please open an [issue](https://github.com/buanet/ioBroker.docker/issues) on Github so we can talk about.
 
-The following ways to set up an ioBroker container are only examples and may vary from platform to platform. Maybe you have to change, add or replace parameters to configure ioBroker for fitting your needs.
+The following ways to set up an ioBroker container are only examples and may vary from platform to platform. Maybe you have to change, add or replace parameters to configure ioBroker to fit your needs.
 
 ### Running from command-line
 
-For taking a first look at the iobroker docker container it would be enough to simply run the following basic docker run command:
+For taking a first look at the iobroker docker container it would be enough to simply run the following, very basic `docker run` command:
 
 ```sh
 docker run -p 8081:8081 --name iobroker -v iobrokerdata:/opt/iobroker buanet/iobroker:latest
@@ -60,7 +60,7 @@ It is always a good choice to avoid using the "latest" tag for production. For m
 
 ### Running with docker-compose
 
-You can also run iobroker by using docker-compose. Here is an example:
+You can also run iobroker by using [docker-compose](https://docs.docker.com/compose/). Here is an example:
 
 ```yml
 version: '2'
@@ -82,7 +82,7 @@ It is always a good choice to avoid using the "latest" tag for production. For m
 
 ## Persistent data
 
-All configuration data of ioBroker is stored in `/opt/iobroker`. To make this data persistent it is recommended to mount an (empty) folder or Docker volume to `/opt/iobroker` during first startup of your container. Since ioBroker Docker image v8.0.0 Docker will create a default volume when you do not mount any folder or volume to `/opt/iobroker`. 
+All configuration data of ioBroker is stored in `/opt/iobroker`. To make this data persistent it is recommended to mount an (empty) folder or Docker volume to `/opt/iobroker` during first startup of your container.<br />Since ioBroker Docker image v8.0.0, it will create a default volume when you do not mount any folder or volume to `/opt/iobroker`.
 
 ::: warning Note
 If you use a shared storage oder external device mounted to your Docker host to store the iobroker folder make sure the mount point on your host does NOT have the `noexec` flag activated. Otherwise you will get problems executing ioBroker inside the container! For mor details please take a look at the corresponding [Github issues](https://github.com/buanet/ioBroker.docker/issues?q=is%3Aissue+noexec).
@@ -112,13 +112,13 @@ To configure your ioBroker container as you need, it is possible to set some ENV
 |LANG|yes|de_DE.UTF&#x2011;8|The following locales are pre-generated: de_DE.UTF-8, en_US.UTF-8|
 |LANGUAGE|yes|de_DE:de|The following locales are pre-generated: de_DE:de, en_US:en|
 |LC_ALL|yes|de_DE.UTF-8|The following locales are pre-generated: de_DE.UTF-8, en_US.UTF-8|
-|PACKAGES|no|none|Installs additional linux packages to your container, packages should be seperated by whitespace like this: `package1 package2 package3`|
+|OFFLINE_MODE|no|false|Set true if your container has no or limited internet connection (!!! Use at your own risk !!!)|
+|PACKAGES|no|none|Installs additional Linux packages to your container, packages should be separated by whitespace like this: `package1 package2 package3`|
 |PERMISSION_CHECK|no|true|Checks and corrects all relevant permissions on container startup, can be `true` or `false` (!!! Use at your own risk !!!)|
 |SETGID|yes|1000|For some reasons it might be useful to specify the gid of the containers iobroker user to match an existing group on the docker host|
 |SETUID|yes|1000|For some reasons it might be useful to specify the uid of the containers iobroker user to match an existing user on the docker host|
 |TZ|yes|Europe/Berlin|Sets the containers timezone, all valid Linux-timezones are possible|
 |USBDEVICES|no|none|Sets relevant permissions on mounted devices like `/dev/ttyACM0`, for more than one device separate with `;` like this: `/dev/ttyACM0;/dev/ttyACM1`|
-|ZWAVE|no|false|Installs openzwave to support zwave-adapter, can be `true` or `false`|
 
 ## Networks
 
@@ -140,15 +140,15 @@ This is an AND condition. You have to do both. Just setting the [ENV](#environme
 
 ### Startup scripts
 
-It is possible to add some script code to container startup with the help of the userscripts feature. You can get this to work by mounting an additional folder or volume to `/opt/userscripts`.
+It is possible to add some script code to container startup with the help of the user scripts feature. You can get this to work by mounting an additional folder or volume to `/opt/userscripts`.
 
-When you mount an empty folder the startup script will restore two example scripts in there. To activate the scripts you have to remove the `_example` part of the filename. The `userscript_firststart.sh` will execute only at the very first start of a new container, while the `userscript_everystart.sh` will execute on every container start.
+When you mount an empty folder the startup script will restore two example scripts in there. To activate the scripts you have to remove the `_example` part of the filename. The `userscript_firststart.sh` will run only at the very first start of a new container, while the `userscript_everystart.sh` will run on every container start.
 
-Feel free to test it with my example code. Take a look at the log. In `Step 4 of 5: Applying special settings` you will see the messages generated by the example userscripts.
+Feel free to test it with my example code. Take a look at the log. In `Step 4 of 5: Applying special settings` you will see the messages generated by the example user scripts.
 
 ### Multihost 
 
-With the help of [ENV](#environment-variables-env) `IOB_MULTIHOST` and the [ENVs](#environment-variables-env) for objects and states db connections it is possible to run a container as standalone (default), multihost `master` or multihost `slave`. This is more or less a feature for advanced users. Please make sure you know how ioBroker multihost is working and what `ìobroker setup custom` does.
+With the help of [ENV](#environment-variables-env) `IOB_MULTIHOST` and the [ENVs](#environment-variables-env) for objects and states db connections it is possible to run a container as standalone (default), multihost `master` or multihost `slave`. This is more or less a feature for advanced users. Please make sure you know how ioBroker multihost is working and what `iobroker setup custom` does.
 
 Further there is no need for executing `iobroker multihost enable` or `iobroker multihost connect` inside the container. Just configure the mentioned [ENVs](#environment-variables-env). The startup script will do all the magic.
 
@@ -156,7 +156,7 @@ For general information about iobroker multihost feature please see [Official io
 
 ### Redis
 
-In ioBroker Docker Image v8.0.0 the implementation of using Redis as objects and/ or states db was completely rebuild. In general the configuration is still done by setting the [ENVs](#environment-variables-env) for db `TYPE`, `HOST` and `PORT`. But there are some more Features available now.
+In ioBroker Docker image v8.0.0 the implementation of using Redis as objects and/ or states db was completely rebuild. In general the configuration is still done by setting the [ENVs](#environment-variables-env) for db `TYPE`, `HOST` and `PORT`. But there are some more features available now like [authentification](#authentification) and the support of [Redis Sentinel cluster](#redis-sentinel-cluster).
 
 For some basic information about using Redis with ioBroker please see this [ioBroker Forum Post by apollon77](https://forum.iobroker.net/topic/26327/redis-in-iobroker-%C3%BCberblick).
 
@@ -200,7 +200,7 @@ Be sure to have a valid backup of your ioBroker installation before applying any
 
 These updates are usually coming through the systems package manager. In case of the ioBroker Docker container it is `apt`. So you will be able to install these updates using the command line of your container.
 
-But the easiest way is always pulling the newest image and/ or simply recreate your container.
+Note that the recommended way is always to simply pull the newest image and recreate your ioBroker Docker container.
 
 #### ioBroker Adapter updates
 
@@ -208,7 +208,11 @@ You will be notified about available adapter updates in the ioBroker admin inter
 
 #### ioBroker js-controller (core) updates
 
-You will be notified about js-controller updates in the ioBroker admin interface. As ioBroker has to be stopped to apply these updates it is not able to install it from the admin interface. You have to do it manually on the containers command line.
+With a minimum of ioBroker Docker Image v8.1.0, js-controller v5.0.10 und admin v6.9.1 it is now possible to upgrade js-controller from the admin ui directly by simply clicking the update button at the "Hosts" tab.
+
+Of course you still will be able to perform the js-controller upgrade from command line. 
+
+**Without the help of [maintenance script](#use-maintenance-script) aka "the hacky way"**
 ```sh
 pkill -u iobroker
 iobroker update
@@ -216,26 +220,29 @@ iobroker upgrade self
 ```
 After this you have to restart your container.
 
-::: tip Pro Tip
-To easily apply js-controller updates you can also use the built in maintenance script. This is recommended if you have some kind of watchdog monitoring your containers health status. For more details on how to use the script see [Best practice](/iobroker-docker-image/docs/#best-practice).
-:::
+**With the help of [maintenance script](#use-maintenance-script) aka "the recommended way"**
+```sh
+maintenance on
+maintenance upgrade
+maintenance off
+```
+Depending on your containers restart policy the container will stop/ restart automatically.
 
 #### Upgrades
 
-When bringing your ioBroker to an new major version of the ioBroker Docker Image (e.g. from v7.x.x to v8.x.x) you are going to perform an upgrade. While updates should normally have no impact to the function of your ioBroker, upgrades might include some "breaking changes" and the need of performing some additional steps.<br>
-So if you are planning to upgrade your Docker Container to a new major version make sure you checked the [release notes](https://github.com/buanet/ioBroker.docker/releases/latest) of the latest release first.
+When bringing your ioBroker to an new major version of the ioBroker Docker Image (e.g. from v7.x.x to v8.x.x) you are going to perform an upgrade. While updates should normally have no impact to the function of your ioBroker, upgrades may include some "breaking changes" and the need of performing some additional steps.<br>
+If you are planning to upgrade your Docker container to a new major version, make sure you read the [release notes](https://github.com/buanet/ioBroker.docker/releases/latest).
 
 ::: danger WARNING
-Make sure to have a valid backup of your ioBroker installation and your js-controller is up to date before performing an upgrade! 
+There is always a small risk of failure when upgrading to a new major version. To minimize this risk make sure your js-controller and adapters are up to date an again make sure you have a valid [backup](#backup) of your ioBroker! 
 :::
 
-In general it is possible to upgrade to a new major version of the ioBroker Docker image by simply recreating your container from the new ioBroker Docker image as you do it in the normal update process.
-In most cases the js-controller will detect the new node version and tries to fix adapters which having problems with the change. But in some rare cases the "recompiling" will fail and you got some additional steps to do like rebuilding or simply reinstalling the adapter.
-In case you have a valid backup, you should simply give it a try. 
+In general the upgrade to a new major version is done like any other Docker image update, by simply recreating your container from the new ioBroker Docker image.
 
-In case the above don't work, or you simply want to void the described problems it is always a smooth option to use the backup and restore procedure whenever switching an existing ioBroker Docker installation to a new major version of the ioBroker Docker image.
+There are some rare cases, when the new major version of the Docker image contains a new major version of node, where the js-controller is not able to recompile some adapters successfully. If this happens, please try to reinstall the affected adapters and take a look at the internal ioBroker log.
 
-So your upgrade might be done like this, for example:
+In case you want to avoid possible upgrade problems or start with a clean ioBroker directory, it is always a smooth option to use the backup and restore procedure to upgrade to a new major image version. You can do this by following these simple steps: 
+
 1. Create a new ioBroker Backup
 2. Create a new and empty folder for your ioBroker data    
 3. Copy the latest backup file from the old ioBroker data folder to the new one
@@ -245,11 +252,11 @@ So your upgrade might be done like this, for example:
 7. Restore the backup file from command line or with the help of iobroker.backitup adapter
 8. Watch progress of reinstalling your adapters at the iobroker log
 
-### Docker Healthcheck
+### Docker Health Check
 
-Since v5.1.0 the image contains a Docker healthcheck. It simply checks if js-controller is running inside the container and reports the container as `healthy` or `unhealthy` to the Docker daemon.
+Since v5.1.0 the image contains a Docker health check. It simply checks if js-controller is running inside the container and reports the container as `healthy` or `unhealthy` to the Docker daemon.
 
-The healthcheck itself is configured to 5 retries in an 15s interval with a timeout of 5s. So a container needs a minimum of one minute to get unhealthy after the js-controller was killed.
+The health check itself is configured to 5 retries in an 15s interval with a timeout of 5s. So a container needs a minimum of one minute to get unhealthy after the js-controller was killed.
 
 ::: tip Pro Tip
 As the Docker daemon itself gives no opportunity to automatically restart an unhealthy container you might want to setup some kind of "watchdog container". Check out [this one](https://github.com/buanet/docker-watchdog) I build some time ago.
@@ -264,8 +271,18 @@ To avoid this you always should use a single version tag (e.g. buanet/iobroker:v
 
 ### Use maintenance script
 
-The ioBrocker Docker image includes a small maintenance script which helps you to manage your ioBroker Docker container. For example you can use this script to set your container into maintenance mode (stops ioBroker but keeps container healthy) and apply js-controller updates. 
+The ioBroker Docker image includes a small maintenance script which helps you to manage your ioBroker Docker container. For example you can use this script to set your container into maintenance mode (stops ioBroker but keeps container healthy) and apply js-controller updates. 
 Simply type `maintenance --help` at the containers command line to see what the script can do for you.
+
+With Docker image v9.0.0 there were made some security changes to the maintenance script. It is now no longer possible to call the script as user `root`. As using root is very common on a containers command line, this was fixed by including the `maintenance` command into the `iobroker` command. For example:
+
+```sh
+iobroker maintenance on
+iob maint on
+iob m on
+```
+
+This will make sure the command is always executed as user `iobroker`.
 
 ### Migrating to Redis
 
@@ -286,7 +303,7 @@ If you want to get the newest features and fixes feel free to use/ test the beta
 
 #### Detecting Docker environment
 
-For adapter developers it is now possible to easily detect if ioBroker is running inside the official docker container. Please simply check if the file `/opt/scripts/.docker_config/.thisisdocker` exists. The content of the file will always tell the image version.  
+For adapter developers it is now possible to easily detect if ioBroker is running inside the official docker container. Please simply check if the file `/opt/.docker_config/.thisisdocker` exists. The content of the file will always tell the image version.  
 
 ---
 

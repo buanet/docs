@@ -66,7 +66,7 @@ Weitere Einzelheiten findest du unter [iobroker.net](https://www.iobroker.net).
 
 ### Was ist Docker?
 
-Docker ist eine Open-Source-Containerisierungsplattform die es einfach macht Anwendungen in kleinen Containern zu entwickeln, bereitzustellen und zu teilen. „Containerisierung“ oder „Containervirtualisierung“ ist der nächste Schritt in den Virtualisierungstechnologien. Während typische virtuelle Maschinen virtualisierte Hardware verwenden um ein vollständiges Betriebssystem auszuführen, enthalten Container nur das absolute Minimum an Abhängigkeiten die eine Software zur Ausführung benötigt, und teilen direkt den Kernel des Hostsystems. Im Vergleich zu virtuellen Maschinen spart Container-Virtualisierung viele Ressourcen.
+Docker ist eine Open-Source-Containerisierungsplattform die es einfach macht Anwendungen in kleinen Containern zu entwickeln, bereitzustellen und zu teilen. „Containerisierung“ oder „Containervirtualisierung“ ist der nächste Schritt in den Virtualisierungstechnologien. Während typische virtuelle Maschinen virtualisierte Hardware verwenden um ein vollständiges Betriebssystem auszuführen, enthalten Container nur das absolute Minimum an Abhängigkeiten die eine Software zur Ausführung benötigt, und teilen direkt den Kernel des Host-Systems. Im Vergleich zu virtuellen Maschinen spart Container-Virtualisierung viele Ressourcen.
 Container fungieren auch als kleine Sandboxen die eine zusätzliche Sicherheitsebene hinzufügen und es einfach machen sie von einem Host auf einen anderen zu verschieben.
 Weitere Informationen zu Docker findest du in der offiziellen [Docker Dokumentation](https://docs.docker.com). Alternativ kannst du aber auch eine kleine YouTube-Session einlegen. Es gibt unzählige Videos die erklären was Docker ist und wie es funktioniert.
 
@@ -89,7 +89,7 @@ Die grundlegenden Informationen zum Ausführen des ioBroker-Docker-Images findes
   * [Wiederherstellung](/de/projects/iobroker-docker-image/docs.md#wiederherstellung)
   * [Aktualisierung (Update)](/de/projects/iobroker-docker-image/docs.md#aktualisierung-update)
   * [Hochrüstung (Upgrade)](/de/projects/iobroker-docker-image/docs.md#hochrustung-upgrade)
-  * [Docker Healthcheck](/de/projects/iobroker-docker-image/docs.md#docker-healthcheck)
+  * [Docker Health Check](/de/projects/iobroker-docker-image/docs.md#docker-health-check)
 * [Bewährte Methoden](/de/projects/iobroker-docker-image/docs.md#bewahrte-methoden)
   * [Vermeide latest Tag](/de/projects/iobroker-docker-image/docs.md#vermeide-latest-tag)
   * [Benutze maintenance Script](/de/projects/iobroker-docker-image/docs.md#benutze-maintenance-script)
