@@ -1,7 +1,7 @@
 {
   "name": "docs.buanet.de",
   "homepage": "https://docs.buanet.de",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "documentation of my projects",
   "scripts": {
     "docs:dev": "vuepress dev docs",
