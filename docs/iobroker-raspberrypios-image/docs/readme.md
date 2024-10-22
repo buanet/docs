@@ -27,7 +27,6 @@ head:
   - - meta
     - property: og:locale
       content: "en_US"
-permalink: /iobroker-raspberrypios-image/docs
 ---
 
 # ioBroker Raspberry Pi OS Image Docs

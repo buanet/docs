@@ -1,7 +1,9 @@
-import { defaultTheme } from 'vuepress'
+import { defaultTheme } from '@vuepress/theme-default'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { webpackBundler } from '@vuepress/bundler-webpack'
 
-module.exports = {
+export default {
+  bundler: webpackBundler({}),
   locales: {
     '/': {
       lang: 'en-US',
@@ -26,56 +28,38 @@ module.exports = {
           },
           {
             text: 'Projects',
-            children: ['/projects/iobroker-docker-image/readme.md', '/projects/iobroker-raspberrypios-image/readme.md'],
-//            {
-//              text: 'Docker Images',
-//              children: ['/projects/iobroker-docker-image/readme.md'/*, '/projects/watchdog-docker-image/readme.md', '/projects/pkitool-docker-image/readme.md'*/],
-//            },
-//            {
-//              text: 'Raspberry OS Images',
-//              children: ['/projects/iobroker-raspberrypios-image/readme.md'/*, '/projects/docker-raspberrypios/readme.md'*/],
-//            },
-//            ],
-        },
-        {
-          text: 'Docs',
-          children: ['/projects/iobroker-docker-image/docs.md', '/projects/iobroker-raspberrypios-image/docs.md'],
-        },
-      ],
+            children: ['/iobroker-docker-image/readme.md', '/iobroker-raspberrypios-image/readme.md'],
+          },
+          {
+            text: 'Docs',
+            children: ['/iobroker-docker-image/docs/readme.md', '/iobroker-raspberrypios-image/docs/readme.md'],
+          },
+        ],
+      },
+      '/de/': {
+        selectLanguageName: 'Deutsch',
+        selectLanguageText: 'Sprache',
+        navbar: [
+          // NavbarItem
+          {
+            text: 'Über mich',
+            link: '/de/about/',
+          },
+          {
+            text: 'Projekte',
+            children: ['/de/iobroker-docker-image/readme.md', '/de/iobroker-raspberrypios-image/readme.md'],
+          },
+          {
+            text: 'Doku',
+            children: ['/de/iobroker-docker-image/docs/readme.md', '/de/iobroker-raspberrypios-image/docs/readme.md'],
+          },
+        ],
+      },
     },
-    '/de/': {
-      selectLanguageName: 'Deutsch',
-      selectLanguageText: 'Sprache',
-      navbar: [
-        // NavbarItem
-        {
-          text: 'Über mich',
-          link: '/de/about/',
-        },
-        {
-          text: 'Projekte',
-          children: ['/de/projects/iobroker-docker-image/readme.md', '/de/projects/iobroker-raspberrypios-image/readme.md'],
-//            {
-//              text: 'Docker Images',
-//              children: ['/de/projects/iobroker-docker-image/readme.md'],
-//            },
-//            {
-//              text: 'Raspberry OS Images',
-//              children: ['/de/projects/iobroker-raspberrypios-image/readme.md'/*, '/de/projects/docker-raspberrypios/readme.md'*/],
-//            },
-//          ],
-        },
-        {
-          text: 'Doku',
-          children: ['/de/projects/iobroker-docker-image/docs.md', '/de/projects/iobroker-raspberrypios-image/docs.md'],
-        },
-      ],
-    },
-  },
-  logo: '/images/logo.png',
-  logoDark: '/images/logo_dark.png',
-  editLink: false,
-  contributors: false,
+    logo: '/images/logo.png',
+    logoDark: '/images/logo_dark.png',
+    editLink: false,
+    contributors: false,
   }),
   plugins: [
     searchPlugin({
@@ -90,4 +74,3 @@ module.exports = {
     }),
   ],
 }
-  

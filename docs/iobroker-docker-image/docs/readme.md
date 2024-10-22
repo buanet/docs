@@ -27,7 +27,6 @@ head:
   - - meta
     - property: og:locale
       content: "en_US"
-permalink: /iobroker-docker-image/docs
 ---
 
 # ioBroker Docker Image Docs
@@ -184,7 +183,7 @@ When copying the ioBroker directory, always take care of preserving the correct 
 #### Backup remote databases with iobroker.backitup in Docker
 
 There are some limitations in backing up remote databases (Redis, InfluxDB, PostgresSQL, MySQL) with iobroker.backitup adapter when running inside a Docker container.
-[This small guide](docs_backitup.md) will help you to understand why options are grayed out by default and how to change it. 
+[This small guide](backitup.md) will help you to understand why options are grayed out by default and how to change it. 
 
 ### Restore
 

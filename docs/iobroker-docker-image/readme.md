@@ -27,12 +27,7 @@ head:
   - - meta
     - property: og:locale
       content: "en_US"
-permalink: /iobroker-docker-image
 ---
-
-<!---
-When using comments plugin on this site, the permalink tag length can be max 27 (location.href max 50) 
--->
 
 # ioBroker Docker Image
 
@@ -74,29 +69,29 @@ For more information please check out the officials [Docker Docs](https://docs.d
 
 The very basic information about how to run the ioBroker Docker image can be found at the [Docker Hub page](https://hub.docker.com/r/buanet/iobroker). For further, more detailed instructions you should check out the official docs with the following content: 
 
-* [Getting Started](/projects/iobroker-docker-image/docs.md#getting-started)
-  * [Running from command-line](/projects/iobroker-docker-image/docs.md#running-from-command-line)
-  * [Running with docker-compose](/projects/iobroker-docker-image/docs.md#running-with-docker-compose)
-* [Persistent data](/projects/iobroker-docker-image/docs.md#persistent-data)
-* [Environment variables (ENV)](/projects/iobroker-docker-image/docs.md#environment-variables-env)
-* [Networks](/projects/iobroker-docker-image/docs.md#networks)
-* [Advanced configuration](/projects/iobroker-docker-image/docs.md#advanced-configuration)
-  * [Mounting USB devices](/projects/iobroker-docker-image/docs.md#mounting-usb-devices)
-  * [Startup scripts](/projects/iobroker-docker-image/docs.md#startup-scripts)
-  * [Multihost](/projects/iobroker-docker-image/docs.md#multihost)
-  * [Redis](/projects/iobroker-docker-image/docs.md#redis)
-* [Maintenance](/projects/iobroker-docker-image/docs.md#maintenance)
-  * [Backup](/projects/iobroker-docker-image/docs.md#backup)
-  * [Restore](/projects/iobroker-docker-image/docs.md#restore)
-  * [Updates & Upgrades](/projects/iobroker-docker-image/docs.md#updates-upgrades)
-  * [Docker Health Check](/projects/iobroker-docker-image/docs.md#docker-health-check)
-* [Best practice](/projects/iobroker-docker-image/docs.md#best-practice)
-  * [Avoid using latest tag](/projects/iobroker-docker-image/docs.md#avoid-using-latest-tag)
-  * [Use maintenance script](/projects/iobroker-docker-image/docs.md#use-maintenance-script)
-  * [Migrating to redis](/projects/iobroker-docker-image/docs.md#migrating-to-redis)
-* [Miscellaneous](/projects/iobroker-docker-image/docs.md#miscellaneous)
-  * [Beta testing](/projects/iobroker-docker-image/docs.md#beta-testing)
-  * [Notes for developers](/projects/iobroker-docker-image/docs.md#notes-for-developers)
+* [Getting Started](/iobroker-docker-image/docs/readme.md#getting-started)
+  * [Running from command-line](/iobroker-docker-image/docs/readme.md#running-from-command-line)
+  * [Running with docker-compose](/iobroker-docker-image/docs/readme.md#running-with-docker-compose)
+* [Persistent data](/iobroker-docker-image/docs/readme.md#persistent-data)
+* [Environment variables (ENV)](/iobroker-docker-image/docs/readme.md#environment-variables-env)
+* [Networks](/iobroker-docker-image/docs/readme.md#networks)
+* [Advanced configuration](/iobroker-docker-image/docs/readme.md#advanced-configuration)
+  * [Mounting USB devices](/iobroker-docker-image/docs/readme.md#mounting-usb-devices)
+  * [Startup scripts](/iobroker-docker-image/docs/readme.md#startup-scripts)
+  * [Multihost](/iobroker-docker-image/docs/readme.md#multihost)
+  * [Redis](/iobroker-docker-image/docs/readme.md#redis)
+* [Maintenance](/iobroker-docker-image/docs/readme.md#maintenance)
+  * [Backup](/iobroker-docker-image/docs/readme.md#backup)
+  * [Restore](/iobroker-docker-image/docs/readme.md#restore)
+  * [Updates & Upgrades](/iobroker-docker-image/docs/readme.md#updates-upgrades)
+  * [Docker Health Check](/iobroker-docker-image/docs/readme.md#docker-health-check)
+* [Best practice](/iobroker-docker-image/docs/readme.md#best-practice)
+  * [Avoid using latest tag](/iobroker-docker-image/docs/readme.md#avoid-using-latest-tag)
+  * [Use maintenance script](/iobroker-docker-image/docs/readme.md#use-maintenance-script)
+  * [Migrating to redis](/iobroker-docker-image/docs/readme.md#migrating-to-redis)
+* [Miscellaneous](/iobroker-docker-image/docs/readme.md#miscellaneous)
+  * [Beta testing](/iobroker-docker-image/docs/readme.md#beta-testing)
+  * [Notes for developers](/iobroker-docker-image/docs/readme.md#notes-for-developers)
 
 <!--
 ## Tutorials

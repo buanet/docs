@@ -27,7 +27,6 @@ head:
   - - meta
     - property: og:locale
       content: "de_DE"
-permalink: /de/iobroker-docker-image
 ---
 
 <!---
@@ -74,29 +73,29 @@ Weitere Informationen zu Docker findest du in der offiziellen [Docker Dokumentat
 
 Die grundlegenden Informationen zum Ausführen des ioBroker-Docker-Images findest du auf der [Docker Hub Seite (englisch)](https://hub.docker.com/r/buanet/iobroker). Für weitere, detailliertere Anweisungen solltest du dir die offizielle Dokumentation mit folgendem Inhalt ansehen:
 
-* [Einstieg](/de/projects/iobroker-docker-image/docs.md#einstieg)
-  * [Starten per Kommandozeile](/de/projects/iobroker-docker-image/docs.md#starten-per-kommandozeile)
-  * [Starten per docker-compose](/de/projects/iobroker-docker-image/docs.md#starten-per-docker-compose)
-* [Persistente Daten](/de/projects/iobroker-docker-image/docs.md#persistente-daten)
-* [Umgebungsvariablen (ENV)](/de/projects/iobroker-docker-image/docs.md#umgebungsvariablen-env)
-* [Netzwerke](/de/projects/iobroker-docker-image/docs.md#netzwerke)
-* [Erweiterte Konfiguration](/de/projects/iobroker-docker-image/docs.md#erweiterte-konfiguration)
-  * [Einbinden von USB-Geräten](/de/projects/iobroker-docker-image/docs.md#einbinden-von-usb-geraten)
-  * [Startskripte](/de/projects/iobroker-docker-image/docs.md#startskripte)
-  * [Multihost](/de/projects/iobroker-docker-image/docs.md#multihost)
-* [Wartung](/de/projects/iobroker-docker-image/docs.md#wartung)
-  * [Sicherung](/de/projects/iobroker-docker-image/docs.md#sicherung)
-  * [Wiederherstellung](/de/projects/iobroker-docker-image/docs.md#wiederherstellung)
-  * [Aktualisierung (Update)](/de/projects/iobroker-docker-image/docs.md#aktualisierung-update)
-  * [Hochrüstung (Upgrade)](/de/projects/iobroker-docker-image/docs.md#hochrustung-upgrade)
-  * [Docker Health Check](/de/projects/iobroker-docker-image/docs.md#docker-health-check)
-* [Bewährte Methoden](/de/projects/iobroker-docker-image/docs.md#bewahrte-methoden)
-  * [Vermeide latest Tag](/de/projects/iobroker-docker-image/docs.md#vermeide-latest-tag)
-  * [Benutze maintenance Script](/de/projects/iobroker-docker-image/docs.md#benutze-maintenance-script)
-  * [Migrieren der States zu Redis](/de/projects/iobroker-docker-image/docs.md#migrieren-der-states-zu-redis)
-* [Sonstiges](/de/projects/iobroker-docker-image/docs.md#sonstiges)
-  * [Beta Tester](/de/projects/iobroker-docker-image/docs.md#beta-tester)
-  * [Hinweise für Entwickler](/de/projects/iobroker-docker-image/docs.md#hinweise-fur-entwickler)
+* [Einstieg](/de/iobroker-docker-image/docs/readme.md#einstieg)
+  * [Starten per Kommandozeile](/de/iobroker-docker-image/docs/readme.md#starten-per-kommandozeile)
+  * [Starten per docker-compose](/de/iobroker-docker-image/docs/readme.md#starten-per-docker-compose)
+* [Persistente Daten](/de/iobroker-docker-image/docs/readme.md#persistente-daten)
+* [Umgebungsvariablen (ENV)](/de/iobroker-docker-image/docs/readme.md#umgebungsvariablen-env)
+* [Netzwerke](/de/iobroker-docker-image/docs/readme.md#netzwerke)
+* [Erweiterte Konfiguration](/de/iobroker-docker-image/docs/readme.md#erweiterte-konfiguration)
+  * [Einbinden von USB-Geräten](/de/iobroker-docker-image/docs/readme.md#einbinden-von-usb-geraten)
+  * [Startskripte](/de/iobroker-docker-image/docs/readme.md#startskripte)
+  * [Multihost](/de/iobroker-docker-image/docs/readme.md#multihost)
+* [Wartung](/de/iobroker-docker-image/docs/readme.md#wartung)
+  * [Sicherung](/de/iobroker-docker-image/docs/readme.md#sicherung)
+  * [Wiederherstellung](/de/iobroker-docker-image/docs/readme.md#wiederherstellung)
+  * [Aktualisierung (Update)](/de/iobroker-docker-image/docs/readme.md#aktualisierung-update)
+  * [Hochrüstung (Upgrade)](/de/iobroker-docker-image/docs/readme.md#hochrustung-upgrade)
+  * [Docker Health Check](/de/iobroker-docker-image/docs/readme.md#docker-health-check)
+* [Bewährte Methoden](/de/iobroker-docker-image/docs/readme.md#bewahrte-methoden)
+  * [Vermeide latest Tag](/de/iobroker-docker-image/docs/readme.md#vermeide-latest-tag)
+  * [Benutze maintenance Script](/de/iobroker-docker-image/docs/readme.md#benutze-maintenance-script)
+  * [Migrieren der States zu Redis](/de/iobroker-docker-image/docs/readme.md#migrieren-der-states-zu-redis)
+* [Sonstiges](/de/iobroker-docker-image/docs/readme.md#sonstiges)
+  * [Beta Tester](/de/iobroker-docker-image/docs/readme.md#beta-tester)
+  * [Hinweise für Entwickler](/de/iobroker-docker-image/docs/readme.md#hinweise-fur-entwickler)
 
 <!---
 ## Tutorials

@@ -27,7 +27,6 @@ head:
   - - meta
     - property: og:locale
       content: "de_DE"
-permalink: /de/iobroker-docker-image/docs
 ---
 
 # ioBroker Docker Image Doku
@@ -188,7 +187,7 @@ Beim direkten Kopieren des Verzeichnisses sollte darauf geachtet werden, dass al
 
 #### Sichern von externen Datenbanken mit iobroker.backitup im Docker Container
 
-Für die Sicherung von externen Datenbanken (z.B. Redis, InfluxDB, PostgresSQL und MySQL) über den iobroker.backitup Adapter im Docker Container gibt es einige Einschränkungen. [Dieser kleine Leitfaden](hdocs_backitup.md) hilft dir dabei zu verstehen warum einige Optionen im Adapter standardmäßig ausgegraut sind und was man dagegen tun kann. 
+Für die Sicherung von externen Datenbanken (z.B. Redis, InfluxDB, PostgresSQL und MySQL) über den iobroker.backitup Adapter im Docker Container gibt es einige Einschränkungen. [Dieser kleine Leitfaden](backitup.md) hilft dir dabei zu verstehen warum einige Optionen im Adapter standardmäßig ausgegraut sind und was man dagegen tun kann. 
 
 ### Wiederherstellung
 

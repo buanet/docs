@@ -27,7 +27,6 @@ head:
   - - meta
     - property: og:locale
       content: "de_DE"
-permalink: /de/iobroker-raspberrypios
 ---
 
 <!---

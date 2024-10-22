@@ -27,10 +27,9 @@ head:
   - - meta
     - property: og:locale
       content: "en_US"
-permalink: /iobroker-docker-image/docs_backitup
 ---
 
-:arrow_backward: [back to "Official ioBroker Docker Image Docs - Backup"](docs.md#backup)
+:arrow_backward: [back to "Official ioBroker Docker Image Docs - Backup"](readme.md#backup)
 
 ::: danger  Work In Progress
 :warning:
