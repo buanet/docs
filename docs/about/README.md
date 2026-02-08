@@ -14,7 +14,7 @@ head:
 # About me
 
 <div id="profile_pic">
-<img src="/images/profile.jpg" />
+<img src="/images/profile.png" />
 </div>
 
 ## Hi, my name is André.
