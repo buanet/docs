@@ -79,6 +79,18 @@ services:
 It is always a good choice to avoid using the "latest" tag for production. For more details see ["Best practice"](/iobroker-docker-image/docs/#best-practice).
 :::
 
+### Running with Easypanel
+
+[Easypanel](https://easypanel.io) is a self-hosted Docker deployment platform, and ioBroker has a one-click deployment template there.
+
+[![Deploy on Easypanel](https://easypanel.io/img/deploy-on-easypanel-40.svg)](https://easypanel.io/templates/iobroker)
+
+The template sets up a persistent volume for `/opt/iobroker` automatically.
+
+::: tip Pro Tip
+It is always a good choice to avoid using the "latest" tag for production. For more details see ["Best practice"](/iobroker-docker-image/docs/#best-practice).
+:::
+
 ## Persistent data
 
 All configuration data of ioBroker is stored in `/opt/iobroker`. To make this data persistent it is recommended to mount an (empty) folder or Docker volume to `/opt/iobroker` during first startup of your container.<br />Since ioBroker Docker image v8.0.0, it will create a default volume when you do not mount any folder or volume to `/opt/iobroker`.
